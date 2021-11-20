@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steam_v2", "Steam_v2\Steam_v2.csproj", "{54894662-24A8-4DF3-AEEA-E71206596487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "Steam_v2\App.csproj", "{54894662-24A8-4DF3-AEEA-E71206596487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamForms", "SteamForms\SteamForms.csproj", "{32A2E8DF-4928-46E1-A478-2E41B41C6105}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SteamForms", "SteamForms\SteamForms.csproj", "{32A2E8DF-4928-46E1-A478-2E41B41C6105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
