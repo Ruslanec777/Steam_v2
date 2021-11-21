@@ -14,5 +14,19 @@ namespace App.Model
         public long Id { get; private set; }
         public string Login { get; set; }
         public string Password { get; set; }
+
+        public AccountData(string name, string patronymic, string surname, string nicName, 
+            Sex sex, int age, long id, string login, string password)
+        {
+            Name = name;
+            Patronymic = patronymic;
+            Surname = surname;
+            NicName = nicName;
+            Sex = sex;
+            Age = age;
+            Id = id;
+            Login = login;
+            Password = password;
+        }
     }
 }

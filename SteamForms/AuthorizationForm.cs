@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace SteamForms
 {
-    public partial class Form1 : Form
+    public partial class AuthorizationForm : Form
     {
         private AccountProvider _accountProvider;
-        public Form1()
+        public AuthorizationForm()
         {
             InitializeComponent();
 
@@ -41,6 +41,14 @@ namespace SteamForms
                 LoginTB.BackColor = Color.White;
             }
            
+        }
+
+        private void RegistrationBtn_Click(object sender, EventArgs e)
+        {
+            RegistrationForm regForm = new RegistrationForm(_accountProvider,this );
+            regForm.Show();
+
+            this.Hide();
         }
     }
 }

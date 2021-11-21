@@ -51,10 +51,6 @@ namespace App.Model
 
         private Account AddNewAccaunt(Account account)
         {
-            if (account == null)
-            {
-                return null;
-            }
             accounts.Add(account);
 
             return account;

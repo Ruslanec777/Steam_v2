@@ -1,7 +1,7 @@
 ﻿
 namespace SteamForms
 {
-    partial class Form1
+    partial class AuthorizationForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,32 +29,12 @@ namespace SteamForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutorizationLabel = new System.Windows.Forms.Label();
-            this.LoginTB = new System.Windows.Forms.TextBox();
             this.PasswordTB = new System.Windows.Forms.TextBox();
             this.LoginingBtn = new System.Windows.Forms.Button();
             this.RegistrationBtn = new System.Windows.Forms.Button();
+            this.LoginTB = new System.Windows.Forms.TextBox();
+            this.AutorizationLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // AutorizationLabel
-            // 
-            this.AutorizationLabel.AutoSize = true;
-            this.AutorizationLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AutorizationLabel.Location = new System.Drawing.Point(63, 101);
-            this.AutorizationLabel.Name = "AutorizationLabel";
-            this.AutorizationLabel.Size = new System.Drawing.Size(179, 37);
-            this.AutorizationLabel.TabIndex = 0;
-            this.AutorizationLabel.Text = "Авторизация";
-            this.AutorizationLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // LoginTB
-            // 
-            this.LoginTB.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LoginTB.Location = new System.Drawing.Point(63, 141);
-            this.LoginTB.Name = "LoginTB";
-            this.LoginTB.PlaceholderText = "Логин";
-            this.LoginTB.Size = new System.Drawing.Size(179, 43);
-            this.LoginTB.TabIndex = 1;
             // 
             // PasswordTB
             // 
@@ -86,8 +66,30 @@ namespace SteamForms
             this.RegistrationBtn.TabIndex = 4;
             this.RegistrationBtn.Text = "Регистрация";
             this.RegistrationBtn.UseVisualStyleBackColor = true;
+            this.RegistrationBtn.Click += new System.EventHandler(this.RegistrationBtn_Click);
             // 
-            // Form1
+            // LoginTB
+            // 
+            this.LoginTB.BackColor = System.Drawing.Color.White;
+            this.LoginTB.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoginTB.Location = new System.Drawing.Point(63, 141);
+            this.LoginTB.Name = "LoginTB";
+            this.LoginTB.PlaceholderText = "Логин";
+            this.LoginTB.Size = new System.Drawing.Size(179, 43);
+            this.LoginTB.TabIndex = 1;
+            // 
+            // AutorizationLabel
+            // 
+            this.AutorizationLabel.AutoSize = true;
+            this.AutorizationLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AutorizationLabel.Location = new System.Drawing.Point(63, 101);
+            this.AutorizationLabel.Name = "AutorizationLabel";
+            this.AutorizationLabel.Size = new System.Drawing.Size(179, 37);
+            this.AutorizationLabel.TabIndex = 0;
+            this.AutorizationLabel.Text = "Авторизация";
+            this.AutorizationLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +99,8 @@ namespace SteamForms
             this.Controls.Add(this.PasswordTB);
             this.Controls.Add(this.LoginTB);
             this.Controls.Add(this.AutorizationLabel);
-            this.Name = "Form1";
+            this.Name = "AuthorizationForm";
+            this.ShowIcon = false;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,12 +108,11 @@ namespace SteamForms
         }
 
         #endregion
-
-        private System.Windows.Forms.Label AutorizationLabel;
-        private System.Windows.Forms.TextBox LoginTB;
         private System.Windows.Forms.TextBox PasswordTB;
         private System.Windows.Forms.Button LoginingBtn;
         private System.Windows.Forms.Button RegistrationBtn;
+        private System.Windows.Forms.TextBox LoginTB;
+        private System.Windows.Forms.Label AutorizationLabel;
     }
 }
 
