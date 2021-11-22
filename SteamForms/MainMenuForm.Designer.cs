@@ -57,6 +57,7 @@ namespace SteamForms
             this.mainAccInfoBtn.TabIndex = 8;
             this.mainAccInfoBtn.Text = "Информация об Аккаунте";
             this.mainAccInfoBtn.UseVisualStyleBackColor = true;
+            this.mainAccInfoBtn.Click += new System.EventHandler(this.mainAccInfoBtn_Click);
             // 
             // button2
             // 

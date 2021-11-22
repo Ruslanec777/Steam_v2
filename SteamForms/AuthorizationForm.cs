@@ -16,6 +16,8 @@ namespace SteamForms
     {
         public MainMenuForm MainMenuForm{ get; set; }
         public AccountProvider AccountProviderS { get; set; }
+        public Form LocalParentForm { get; set ; }
+
         public AuthorizationForm(AccountProvider accountProvider ,MainMenuForm mainMenuForm)
         {
             InitializeComponent();

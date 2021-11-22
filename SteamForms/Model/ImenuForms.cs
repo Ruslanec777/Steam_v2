@@ -4,15 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SteamForms.Model
 {
     interface ImenuForms
     {
-
         public AccountProvider AccountProviderS{ get; set; }
-        public MainMenuForm MainMenuForm { get; set; }
-
-
+        public  Form LocalParentForm { get; set; }
     }
 }

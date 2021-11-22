@@ -2,7 +2,7 @@
 
 namespace App.Model
 {
-    public class SteamClient
+    public static class SteamClient
     {
         public static Account CurrentAccaunt { get; set; } = null;
 

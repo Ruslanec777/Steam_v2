@@ -19,6 +19,9 @@ namespace SteamForms
 
         public MainMenuForm MainMenuForm { get; set; }
 
+        public Form LocalParentForm { get ; set ; }
+
+
 
         public RegistrationFormData RegFormData
         {
@@ -34,7 +37,6 @@ namespace SteamForms
 
                 return accountData;
             }
-
         }
 
 
@@ -51,11 +53,6 @@ namespace SteamForms
         public RegistrationForm(AccountProvider accountProvider, MainMenuForm mainMenuForm) : this(accountProvider)
         {
             MainMenuForm = mainMenuForm;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void RegistrationForm_Load(object sender, EventArgs e)
