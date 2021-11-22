@@ -3,7 +3,7 @@ using System;
 
 namespace App.Model
 {
-    public class AccountData
+    public class RegistrationFormData
     {
         public string Name { get; set; }
         public string Patronymic { get; set; }
@@ -15,16 +15,15 @@ namespace App.Model
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public AccountData(string name, string patronymic, string surname, string nicName, 
-            Sex sex, int age, long id, string login, string password)
+        public RegistrationFormData(string name, string patronymic, string surname, string nicName, 
+            Sex sex, int age, string login, string password)
         {
             Name = name;
             Patronymic = patronymic;
             Surname = surname;
             NicName = nicName;
             Sex = sex;
-            Age = age;
-            Id = id;
+            Age = age;     
             Login = login;
             Password = password;
         }

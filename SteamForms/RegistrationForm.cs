@@ -1,4 +1,6 @@
 ﻿using App.Model;
+using Steam_v2.Enums;
+using SteamForms.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,35 +13,44 @@ using System.Windows.Forms;
 
 namespace SteamForms
 {
-    public partial class RegistrationForm : Form
+    public partial class RegistrationForm : Form, ImenuForms
     {
-        private AuthorizationForm _authorizationForm;
+        public AccountProvider AccountProviderS { get; set; }
 
-        private AccountProvider _accountProvider;
+        public MainMenuForm MainMenuForm { get; set; }
 
 
-        public AccountData AccountData
+        public RegistrationFormData RegFormData
         {
-            get {
-                AccountData accountData = new AccountData(RegNameTB.Text,RegPatronymicTB,RegSurnameTB,RegNicNameTB.Text,
-                    );
+            get
+            {
+                Sex sex = (regSexComboBox.Text == "Мужской") ? Sex.Man : Sex.Woman;
 
-                
-                return accountData; }
-            
+                int age;
+                int.TryParse(RegAgeTB.Text, out age);
+
+                RegistrationFormData accountData = new RegistrationFormData(RegNameTB.Text, RegPatronymicTB.Text, RegSurnameTB.Text, RegNicNameTB.Text,
+                    sex, age, RegLoginTB.Text, RegPasswordTB.Text);
+
+                return accountData;
+            }
+
         }
 
 
-        public RegistrationForm(AccountProvider accountProvider )
+        public RegistrationForm(AccountProvider accountProvider)
         {
             InitializeComponent();
 
-           _accountProvider=accountProvider;
+            AccountProviderS = accountProvider;
+
+            regSexComboBox.Items.Add("Мужской");
+            regSexComboBox.Items.Add("Женский");
         }
 
-        public RegistrationForm(AccountProvider accountProvider, AuthorizationForm authorizationForm) : this(accountProvider)
+        public RegistrationForm(AccountProvider accountProvider, MainMenuForm mainMenuForm) : this(accountProvider)
         {
-            _authorizationForm = authorizationForm;
+            MainMenuForm = mainMenuForm;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -54,7 +65,7 @@ namespace SteamForms
 
         private void RegBackBtn_Click(object sender, EventArgs e)
         {
-            _authorizationForm.Show();
+            MainMenuForm.Show();
 
             this.Close();
         }
@@ -62,13 +73,19 @@ namespace SteamForms
         private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Application.Exit();
-            _authorizationForm.Show();
+            //AuthorizationForm.Show();
         }
 
-        private void RegRegistrationBtn_Click(object sender, EventArgs e)
+        private void regTryRegistrationBtn_Click(object sender, EventArgs e)
         {
-            AccountData accountData = new AccountData();
-            _accountProvider.TryRegistrationAccaunt();
+            Account tempAccount = AccountProviderS.TryRegistrationAccaunt(RegFormData);
+            if (tempAccount != null)
+            {
+                SteamClient.CurrentAccaunt = tempAccount;
+                MainMenuForm.Show();
+
+                this.Close();
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace App.Model
         public bool IsAuthorized { get; set; }
         public string Fio { get; set; }
 
-        public Account(AccountData accountData)
+        public Account(RegistrationFormData accountData)
         {
             Name = accountData.Name;
             Patronymic = accountData.Patronymic;

@@ -1,4 +1,5 @@
 ﻿using App.Model;
+using SteamForms.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,24 +12,20 @@ using System.Windows.Forms;
 
 namespace SteamForms
 {
-    public partial class AuthorizationForm : Form
+    public partial class AuthorizationForm : Form,ImenuForms
     {
-        private AccountProvider _accountProvider;
-        public AuthorizationForm()
+        public MainMenuForm MainMenuForm{ get; set; }
+        public AccountProvider AccountProviderS { get; set; }
+        public AuthorizationForm(AccountProvider accountProvider ,MainMenuForm mainMenuForm)
         {
             InitializeComponent();
-
-            _accountProvider = SteamClient.accauntProvider;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            AccountProviderS = accountProvider;
+            MainMenuForm = mainMenuForm;
         }
 
         private void LoginingBtn_Click(object sender, EventArgs e)
         {
-            Account tempAccount = _accountProvider.TryLogining(LoginTB.Text, PasswordTB.Text);
+            Account tempAccount = AccountProviderS.TryLogining(LoginTB.Text, PasswordTB.Text);
             if (tempAccount!=null)
             {
                 SteamClient.CurrentAccaunt = tempAccount;
@@ -39,16 +36,15 @@ namespace SteamForms
                 LoginTB.BackColor = Color.Red;
                 MessageBox.Show("Неверный логин или пароль");
                 LoginTB.BackColor = Color.White;
-            }
-           
+            }         
         }
 
         private void RegistrationBtn_Click(object sender, EventArgs e)
         {
-            RegistrationForm regForm = new RegistrationForm(_accountProvider,this );
+            RegistrationForm regForm = new RegistrationForm(AccountProviderS ,MainMenuForm);
             regForm.Show();
 
-            this.Hide();
+            this.Close();
         }
     }
 }

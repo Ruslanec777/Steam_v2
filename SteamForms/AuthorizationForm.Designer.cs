@@ -87,13 +87,12 @@ namespace SteamForms
             this.AutorizationLabel.Size = new System.Drawing.Size(179, 37);
             this.AutorizationLabel.TabIndex = 0;
             this.AutorizationLabel.Text = "Авторизация";
-            this.AutorizationLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 481);
+            this.ClientSize = new System.Drawing.Size(304, 495);
             this.Controls.Add(this.RegistrationBtn);
             this.Controls.Add(this.LoginingBtn);
             this.Controls.Add(this.PasswordTB);

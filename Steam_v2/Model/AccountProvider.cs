@@ -23,7 +23,7 @@ namespace App.Model
 
             return null;
         }
-        public Account TryRegistrationAccaunt(AccountData accountData)
+        public Account TryRegistrationAccaunt(RegistrationFormData accountData)
         {
             Account tempAccaunt = CreateAccauntInstance(accountData);
             if (tempAccaunt != null)
@@ -34,7 +34,6 @@ namespace App.Model
             {
                 return null;
             }
-
 
         }
 
@@ -56,7 +55,7 @@ namespace App.Model
             return account;
         }
 
-        private Account CreateAccauntInstance(AccountData accountData)
+        private Account CreateAccauntInstance(RegistrationFormData accountData)
         {
             if (FindAccountToLigin(accountData.Login) == null)
             {

@@ -29,34 +29,23 @@ namespace SteamForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.RegRegistrationBtn = new System.Windows.Forms.Button();
             this.RegBackBtn = new System.Windows.Forms.Button();
             this.RegNameTB = new System.Windows.Forms.TextBox();
-            this.RegistrationLabel = new System.Windows.Forms.Label();
             this.RegLoginTB = new System.Windows.Forms.TextBox();
             this.RegAgeTB = new System.Windows.Forms.TextBox();
-            this.RegSexTB = new System.Windows.Forms.TextBox();
             this.RegNicNameTB = new System.Windows.Forms.TextBox();
             this.RegSurnameTB = new System.Windows.Forms.TextBox();
             this.RegPatronymicTB = new System.Windows.Forms.TextBox();
             this.RegPasswordTB = new System.Windows.Forms.TextBox();
+            this.regSexComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.regTryRegistrationBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // RegRegistrationBtn
-            // 
-            this.RegRegistrationBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegRegistrationBtn.Location = new System.Drawing.Point(97, 473);
-            this.RegRegistrationBtn.Name = "RegRegistrationBtn";
-            this.RegRegistrationBtn.Size = new System.Drawing.Size(342, 43);
-            this.RegRegistrationBtn.TabIndex = 8;
-            this.RegRegistrationBtn.Text = "Регистрация";
-            this.RegRegistrationBtn.UseVisualStyleBackColor = true;
-            this.RegRegistrationBtn.Click += new System.EventHandler(this.RegRegistrationBtn_Click);
             // 
             // RegBackBtn
             // 
             this.RegBackBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegBackBtn.Location = new System.Drawing.Point(97, 522);
+            this.RegBackBtn.Location = new System.Drawing.Point(97, 491);
             this.RegBackBtn.Name = "RegBackBtn";
             this.RegBackBtn.Size = new System.Drawing.Size(342, 43);
             this.RegBackBtn.TabIndex = 7;
@@ -72,16 +61,6 @@ namespace SteamForms
             this.RegNameTB.PlaceholderText = "Имя";
             this.RegNameTB.Size = new System.Drawing.Size(342, 43);
             this.RegNameTB.TabIndex = 6;
-            // 
-            // RegistrationLabel
-            // 
-            this.RegistrationLabel.AutoSize = true;
-            this.RegistrationLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegistrationLabel.Location = new System.Drawing.Point(177, 9);
-            this.RegistrationLabel.Name = "RegistrationLabel";
-            this.RegistrationLabel.Size = new System.Drawing.Size(171, 37);
-            this.RegistrationLabel.TabIndex = 5;
-            this.RegistrationLabel.Text = "Регистрация";
             // 
             // RegLoginTB
             // 
@@ -100,15 +79,6 @@ namespace SteamForms
             this.RegAgeTB.PlaceholderText = "Возраст";
             this.RegAgeTB.Size = new System.Drawing.Size(342, 43);
             this.RegAgeTB.TabIndex = 12;
-            // 
-            // RegSexTB
-            // 
-            this.RegSexTB.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegSexTB.Location = new System.Drawing.Point(97, 245);
-            this.RegSexTB.Name = "RegSexTB";
-            this.RegSexTB.PlaceholderText = "Пол";
-            this.RegSexTB.Size = new System.Drawing.Size(342, 43);
-            this.RegSexTB.TabIndex = 13;
             // 
             // RegNicNameTB
             // 
@@ -147,22 +117,52 @@ namespace SteamForms
             this.RegPasswordTB.TabIndex = 17;
             this.RegPasswordTB.UseSystemPasswordChar = true;
             // 
+            // regSexComboBox
+            // 
+            this.regSexComboBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.regSexComboBox.FormattingEnabled = true;
+            this.regSexComboBox.Location = new System.Drawing.Point(97, 245);
+            this.regSexComboBox.Name = "regSexComboBox";
+            this.regSexComboBox.Size = new System.Drawing.Size(342, 45);
+            this.regSexComboBox.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(187, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 37);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Регистрация";
+            // 
+            // regTryRegistrationBtn
+            // 
+            this.regTryRegistrationBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.regTryRegistrationBtn.Location = new System.Drawing.Point(97, 442);
+            this.regTryRegistrationBtn.Name = "regTryRegistrationBtn";
+            this.regTryRegistrationBtn.Size = new System.Drawing.Size(342, 43);
+            this.regTryRegistrationBtn.TabIndex = 19;
+            this.regTryRegistrationBtn.Text = "Регистрируем Аккаунт";
+            this.regTryRegistrationBtn.UseVisualStyleBackColor = true;
+            this.regTryRegistrationBtn.Click += new System.EventHandler(this.regTryRegistrationBtn_Click);
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 677);
+            this.Controls.Add(this.regTryRegistrationBtn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.regSexComboBox);
             this.Controls.Add(this.RegPasswordTB);
             this.Controls.Add(this.RegPatronymicTB);
             this.Controls.Add(this.RegSurnameTB);
             this.Controls.Add(this.RegNicNameTB);
-            this.Controls.Add(this.RegSexTB);
             this.Controls.Add(this.RegAgeTB);
             this.Controls.Add(this.RegLoginTB);
-            this.Controls.Add(this.RegRegistrationBtn);
             this.Controls.Add(this.RegBackBtn);
             this.Controls.Add(this.RegNameTB);
-            this.Controls.Add(this.RegistrationLabel);
             this.Name = "RegistrationForm";
             this.ShowIcon = false;
             this.Text = "RegistrationForm";
@@ -174,17 +174,16 @@ namespace SteamForms
         }
 
         #endregion
-
-        private System.Windows.Forms.Button RegRegistrationBtn;
         private System.Windows.Forms.Button RegBackBtn;
         private System.Windows.Forms.TextBox RegNameTB;
-        private System.Windows.Forms.Label RegistrationLabel;
         private System.Windows.Forms.TextBox RegLoginTB;
         private System.Windows.Forms.TextBox RegAgeTB;
-        private System.Windows.Forms.TextBox RegSexTB;
         private System.Windows.Forms.TextBox RegNicNameTB;
         private System.Windows.Forms.TextBox RegSurnameTB;
         private System.Windows.Forms.TextBox RegPatronymicTB;
         private System.Windows.Forms.TextBox RegPasswordTB;
+        private System.Windows.Forms.ComboBox regSexComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button regTryRegistrationBtn;
     }
 }
