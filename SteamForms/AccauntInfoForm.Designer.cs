@@ -39,7 +39,7 @@ namespace SteamForms
             this.RegLoginTB = new System.Windows.Forms.TextBox();
             this.regNameTB = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.accInfBackBtn = new System.Windows.Forms.Button();
             this.regIdTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -136,15 +136,16 @@ namespace SteamForms
             this.button2.Text = "Сохранить изменения";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // accInfBackBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(86, 558);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(342, 43);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Вернуться";
-            this.button1.UseVisualStyleBackColor = true;
+            this.accInfBackBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.accInfBackBtn.Location = new System.Drawing.Point(86, 558);
+            this.accInfBackBtn.Name = "accInfBackBtn";
+            this.accInfBackBtn.Size = new System.Drawing.Size(342, 43);
+            this.accInfBackBtn.TabIndex = 29;
+            this.accInfBackBtn.Text = "Вернуться";
+            this.accInfBackBtn.UseVisualStyleBackColor = true;
+            this.accInfBackBtn.Click += new System.EventHandler(this.accInfBackBtn_Click);
             // 
             // regIdTB
             // 
@@ -161,7 +162,7 @@ namespace SteamForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 620);
             this.Controls.Add(this.regIdTB);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.accInfBackBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.accountInfolabel);
             this.Controls.Add(this.regSexComboBox);
@@ -174,7 +175,6 @@ namespace SteamForms
             this.Controls.Add(this.regNameTB);
             this.Name = "AccauntInfoForm";
             this.Text = "AccauntInfoForm";
-            this.Activated += new System.EventHandler(this.AccauntInfoForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccauntInfoForm_FormClosed);
             this.Load += new System.EventHandler(this.AccauntInfoForm_Load);
             this.ResumeLayout(false);
@@ -194,7 +194,7 @@ namespace SteamForms
         private System.Windows.Forms.TextBox RegLoginTB;
         private System.Windows.Forms.TextBox regNameTB;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button accInfBackBtn;
         private System.Windows.Forms.TextBox regIdTB;
     }
 }

@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SteamForms.Model
+namespace SteamForms.Interfaces
 {
     interface ImenuForms
     {
-        public AccountProvider AccountProviderS{ get; set; }
-        public  Form LocalParentForm { get; set; }
+        public AccountProvider AccountProviderS { get; set; }
+        public Form LocalParentForm { get; set; }
     }
 }

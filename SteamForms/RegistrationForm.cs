@@ -1,6 +1,6 @@
 ﻿using App.Model;
 using Steam_v2.Enums;
-using SteamForms.Model;
+using SteamForms.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

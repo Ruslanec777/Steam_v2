@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Steam_v2\App.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
 </Project>

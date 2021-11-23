@@ -31,17 +31,17 @@ namespace SteamForms
         {
             this.mainMenuUserLabel = new System.Windows.Forms.Label();
             this.mainAccInfoBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.mainMenuQuitFromAccBtn = new System.Windows.Forms.Button();
+            this.MainMenuGameAreaBtn = new System.Windows.Forms.Button();
+            this.mainMenuGameShopBtn = new System.Windows.Forms.Button();
+            this.mainBalanceBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainMenuUserLabel
             // 
             this.mainMenuUserLabel.AutoSize = true;
             this.mainMenuUserLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainMenuUserLabel.Location = new System.Drawing.Point(163, 9);
+            this.mainMenuUserLabel.Location = new System.Drawing.Point(12, 9);
             this.mainMenuUserLabel.Name = "mainMenuUserLabel";
             this.mainMenuUserLabel.Size = new System.Drawing.Size(196, 37);
             this.mainMenuUserLabel.TabIndex = 6;
@@ -51,7 +51,7 @@ namespace SteamForms
             // mainAccInfoBtn
             // 
             this.mainAccInfoBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainAccInfoBtn.Location = new System.Drawing.Point(163, 49);
+            this.mainAccInfoBtn.Location = new System.Drawing.Point(12, 49);
             this.mainAccInfoBtn.Name = "mainAccInfoBtn";
             this.mainAccInfoBtn.Size = new System.Drawing.Size(392, 43);
             this.mainAccInfoBtn.TabIndex = 8;
@@ -59,55 +59,57 @@ namespace SteamForms
             this.mainAccInfoBtn.UseVisualStyleBackColor = true;
             this.mainAccInfoBtn.Click += new System.EventHandler(this.mainAccInfoBtn_Click);
             // 
-            // button2
+            // mainMenuQuitFromAccBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(163, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(392, 43);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Регистрация";
-            this.button2.UseVisualStyleBackColor = true;
+            this.mainMenuQuitFromAccBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mainMenuQuitFromAccBtn.Location = new System.Drawing.Point(12, 245);
+            this.mainMenuQuitFromAccBtn.Name = "mainMenuQuitFromAccBtn";
+            this.mainMenuQuitFromAccBtn.Size = new System.Drawing.Size(392, 43);
+            this.mainMenuQuitFromAccBtn.TabIndex = 9;
+            this.mainMenuQuitFromAccBtn.Text = "Выйти из аккаунта";
+            this.mainMenuQuitFromAccBtn.UseVisualStyleBackColor = true;
+            this.mainMenuQuitFromAccBtn.Click += new System.EventHandler(this.mainMenuQuitFromAccBtn_Click);
             // 
-            // button3
+            // MainMenuGameAreaBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(163, 196);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(392, 43);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Регистрация";
-            this.button3.UseVisualStyleBackColor = true;
+            this.MainMenuGameAreaBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MainMenuGameAreaBtn.Location = new System.Drawing.Point(12, 196);
+            this.MainMenuGameAreaBtn.Name = "MainMenuGameAreaBtn";
+            this.MainMenuGameAreaBtn.Size = new System.Drawing.Size(392, 43);
+            this.MainMenuGameAreaBtn.TabIndex = 10;
+            this.MainMenuGameAreaBtn.Text = "Игровая зона";
+            this.MainMenuGameAreaBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // mainMenuGameShopBtn
             // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(163, 147);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(392, 43);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Регистрация";
-            this.button4.UseVisualStyleBackColor = true;
+            this.mainMenuGameShopBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mainMenuGameShopBtn.Location = new System.Drawing.Point(12, 147);
+            this.mainMenuGameShopBtn.Name = "mainMenuGameShopBtn";
+            this.mainMenuGameShopBtn.Size = new System.Drawing.Size(392, 43);
+            this.mainMenuGameShopBtn.TabIndex = 11;
+            this.mainMenuGameShopBtn.Text = "Магазин Игр";
+            this.mainMenuGameShopBtn.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // mainBalanceBtn
             // 
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(163, 98);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(392, 43);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Регистрация";
-            this.button5.UseVisualStyleBackColor = true;
+            this.mainBalanceBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mainBalanceBtn.Location = new System.Drawing.Point(12, 98);
+            this.mainBalanceBtn.Name = "mainBalanceBtn";
+            this.mainBalanceBtn.Size = new System.Drawing.Size(392, 43);
+            this.mainBalanceBtn.TabIndex = 12;
+            this.mainBalanceBtn.Text = "Управление счетом";
+            this.mainBalanceBtn.UseVisualStyleBackColor = true;
+            this.mainBalanceBtn.Click += new System.EventHandler(this.mainBalanceBtn_Click);
             // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 743);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(431, 573);
+            this.Controls.Add(this.mainBalanceBtn);
+            this.Controls.Add(this.mainMenuGameShopBtn);
+            this.Controls.Add(this.MainMenuGameAreaBtn);
+            this.Controls.Add(this.mainMenuQuitFromAccBtn);
             this.Controls.Add(this.mainMenuUserLabel);
             this.Controls.Add(this.mainAccInfoBtn);
             this.Name = "MainMenuForm";
@@ -122,9 +124,9 @@ namespace SteamForms
 
         private System.Windows.Forms.Label mainMenuUserLabel;
         private System.Windows.Forms.Button mainAccInfoBtn;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button mainMenuQuitFromAccBtn;
+        private System.Windows.Forms.Button MainMenuGameAreaBtn;
+        private System.Windows.Forms.Button mainMenuGameShopBtn;
+        private System.Windows.Forms.Button mainBalanceBtn;
     }
 }

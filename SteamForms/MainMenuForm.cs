@@ -1,5 +1,4 @@
 ﻿using App.Model;
-using SteamForms.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +39,18 @@ namespace SteamForms
         private void mainAccInfoBtn_Click(object sender, EventArgs e)
         {
             new AccauntInfoForm(AccountProviderS, this).Show();
+        }
+
+        private void mainBalanceBtn_Click(object sender, EventArgs e)
+        {
+            new BalancForm(AccountProviderS,this).Show();
+        }
+
+        private void mainMenuQuitFromAccBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            new AuthorizationForm(AccountProviderS, this).Show();
         }
     }
 }

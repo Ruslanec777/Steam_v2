@@ -1,6 +1,6 @@
 ﻿using App.Model;
 using Steam_v2.Enums;
-using SteamForms.Model;
+using SteamForms.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,21 +44,18 @@ namespace SteamForms
 
         private void AccauntInfoForm_Load(object sender, EventArgs e)
         {
-
             LocalParentForm.Hide();
-
         }
 
         private void AccauntInfoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             //this.Close();
             LocalParentForm.Show();
         }
 
-        private void AccauntInfoForm_Activated(object sender, EventArgs e)
+        private void accInfBackBtn_Click(object sender, EventArgs e)
         {
-            //((Form)sender).Hide();
+            this.Close();
         }
     }
 }
