@@ -8,5 +8,7 @@ namespace App.Model
 
         public static AccountProvider accauntProvider = new AccountProvider();
 
+        public static GameShop gameShop = new GameShop();
+
     }
 }

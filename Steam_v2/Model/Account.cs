@@ -13,7 +13,7 @@ namespace App.Model
         public int Age { get; set; }
         //private static long AccauntCount
         //{ set; get; }
-        public long Id { get; private set; }
+        public string Id { get; private set; }
         public decimal Balance { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -22,13 +22,13 @@ namespace App.Model
 
         public Account(RegistrationFormData accountData)
         {
+            Id = Guid.NewGuid().ToString();
             Name = accountData.Name;
             Patronymic = accountData.Patronymic;
             Surname = accountData.Surname;
             NicName = accountData.NicName;
             Sex = accountData.Sex;
             Age = accountData.Age;
-            Id = accountData.Id;
             Password = accountData.Password;
             Login = accountData.Login;
         }

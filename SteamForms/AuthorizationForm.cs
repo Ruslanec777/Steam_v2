@@ -15,19 +15,19 @@ namespace SteamForms
     public partial class AuthorizationForm : Form,ImenuForms
     {
         public MainMenuForm MainMenuForm{ get; set; }
-        public AccountProvider AccountProviderS { get; set; }
+        public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set ; }
 
-        public AuthorizationForm(AccountProvider accountProvider ,MainMenuForm mainMenuForm)
+        public AuthorizationForm(AccountProvider accountProvider, MainMenuForm mainMenuForm)
         {
             InitializeComponent();
-            AccountProviderS = accountProvider;
+            AccountProvider = accountProvider;
             MainMenuForm = mainMenuForm;
         }
 
         private void LoginingBtn_Click(object sender, EventArgs e)
         {
-            Account tempAccount = AccountProviderS.TryLogining(LoginTB.Text, PasswordTB.Text);
+            Account tempAccount = AccountProvider.TryLogining(LoginTB.Text, PasswordTB.Text);
             if (tempAccount!=null)
             {
                 SteamClient.CurrentAccaunt = tempAccount;
@@ -43,7 +43,7 @@ namespace SteamForms
 
         private void RegistrationBtn_Click(object sender, EventArgs e)
         {
-            RegistrationForm regForm = new RegistrationForm(AccountProviderS ,MainMenuForm);
+            RegistrationForm regForm = new RegistrationForm(AccountProvider ,MainMenuForm);
             regForm.Show();
 
             this.Close();

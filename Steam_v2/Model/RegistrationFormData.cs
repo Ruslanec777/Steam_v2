@@ -11,7 +11,6 @@ namespace App.Model
         public string NicName { get; set; }
         public Sex Sex { get; set; }
         public int Age { get; set; }
-        public long Id { get; private set; }
         public string Login { get; set; }
         public string Password { get; set; }
 

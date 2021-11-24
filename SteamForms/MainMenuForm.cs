@@ -20,20 +20,13 @@ namespace SteamForms
             InitializeComponent();
         }
 
-        private void RegistrationLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void MainMenuForm_Shown(object sender, EventArgs e)
         {
             if (SteamClient.CurrentAccaunt == null)
             {
                 this.Hide();
-                new AuthorizationForm(AccountProviderS ,this).Show();
+                new AuthorizationForm(AccountProviderS, this).Show();
             }
-
         }
 
         private void mainAccInfoBtn_Click(object sender, EventArgs e)
@@ -51,6 +44,11 @@ namespace SteamForms
             this.Hide();
 
             new AuthorizationForm(AccountProviderS, this).Show();
+        }
+
+        private void mainMenuGameShopBtn_Click(object sender, EventArgs e)
+        {
+            new GameShopForm1(AccountProviderS, this).Show();
         }
     }
 }

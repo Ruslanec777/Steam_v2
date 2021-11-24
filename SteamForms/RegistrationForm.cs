@@ -15,7 +15,7 @@ namespace SteamForms
 {
     public partial class RegistrationForm : Form, ImenuForms
     {
-        public AccountProvider AccountProviderS { get; set; }
+        public AccountProvider AccountProvider { get; set; }
 
         public MainMenuForm MainMenuForm { get; set; }
 
@@ -44,7 +44,7 @@ namespace SteamForms
         {
             InitializeComponent();
 
-            AccountProviderS = accountProvider;
+            AccountProvider = accountProvider;
 
             regSexComboBox.Items.Add("Мужской");
             regSexComboBox.Items.Add("Женский");
@@ -53,11 +53,6 @@ namespace SteamForms
         public RegistrationForm(AccountProvider accountProvider, MainMenuForm mainMenuForm) : this(accountProvider)
         {
             MainMenuForm = mainMenuForm;
-        }
-
-        private void RegistrationForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void RegBackBtn_Click(object sender, EventArgs e)
@@ -75,7 +70,7 @@ namespace SteamForms
 
         private void regTryRegistrationBtn_Click(object sender, EventArgs e)
         {
-            Account tempAccount = AccountProviderS.TryRegistrationAccaunt(RegFormData);
+            Account tempAccount = AccountProvider.TryRegistrationAccaunt(RegFormData);
             if (tempAccount != null)
             {
                 SteamClient.CurrentAccaunt = tempAccount;

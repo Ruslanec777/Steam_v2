@@ -15,14 +15,14 @@ namespace SteamForms
 {
     public partial class BalancForm : Form,ImenuForms
     {
-        public AccountProvider AccountProviderS { get ; set ; }
+        public AccountProvider AccountProvider { get ; set ; }
         public Form LocalParentForm { get; set ; }
 
         public BalancForm(AccountProvider accountProvider, Form parentForm)
         {
             InitializeComponent();
 
-            AccountProviderS = accountProvider;
+            AccountProvider = accountProvider;
             LocalParentForm = parentForm;
 
             balancMenuIdNicNamelabel.Text = $"ID: {CurrentAccaunt.Id} , {CurrentAccaunt.NicName}";

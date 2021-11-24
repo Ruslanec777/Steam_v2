@@ -8,6 +8,8 @@ namespace App.Model
 
         public int Price { get; private set; }
 
+        public string imgPath { get; set; }
+
         private Account[] accounts = new Account[0];
 
         // private  Account [] Accounts { get; set; }

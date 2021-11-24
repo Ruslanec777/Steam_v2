@@ -10,7 +10,7 @@ namespace SteamForms.Interfaces
 {
     interface ImenuForms
     {
-        public AccountProvider AccountProviderS { get; set; }
+        public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
     }
 }

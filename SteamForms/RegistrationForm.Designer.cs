@@ -151,7 +151,7 @@ namespace SteamForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 677);
+            this.ClientSize = new System.Drawing.Size(474, 677);
             this.Controls.Add(this.regTryRegistrationBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.regSexComboBox);
@@ -167,7 +167,6 @@ namespace SteamForms
             this.ShowIcon = false;
             this.Text = "RegistrationForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
-            this.Load += new System.EventHandler(this.RegistrationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

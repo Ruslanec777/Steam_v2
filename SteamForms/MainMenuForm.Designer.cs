@@ -46,7 +46,6 @@ namespace SteamForms
             this.mainMenuUserLabel.Size = new System.Drawing.Size(196, 37);
             this.mainMenuUserLabel.TabIndex = 6;
             this.mainMenuUserLabel.Text = "Главное меню";
-            this.mainMenuUserLabel.Click += new System.EventHandler(this.RegistrationLabel_Click);
             // 
             // mainAccInfoBtn
             // 
@@ -89,6 +88,7 @@ namespace SteamForms
             this.mainMenuGameShopBtn.TabIndex = 11;
             this.mainMenuGameShopBtn.Text = "Магазин Игр";
             this.mainMenuGameShopBtn.UseVisualStyleBackColor = true;
+            this.mainMenuGameShopBtn.Click += new System.EventHandler(this.mainMenuGameShopBtn_Click);
             // 
             // mainBalanceBtn
             // 

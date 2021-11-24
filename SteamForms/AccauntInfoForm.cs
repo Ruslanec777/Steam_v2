@@ -17,14 +17,14 @@ namespace SteamForms
 {
     public partial class AccauntInfoForm : Form, ImenuForms
     {
-        public AccountProvider AccountProviderS { get; set; }
+        public AccountProvider AccountProvider { get; set; }
         public  Form LocalParentForm { get; set; }
 
         public AccauntInfoForm(AccountProvider accountProvider, Form parent)
         {
             InitializeComponent();
 
-            AccountProviderS = accountProvider;
+            AccountProvider = accountProvider;
             LocalParentForm = parent;
             Form tempForm = ParentForm;
 
@@ -38,8 +38,6 @@ namespace SteamForms
             RegLoginTB.Text = CurrentAccaunt.Login;
             RegPasswordTB.Text = CurrentAccaunt.Password;
             regNameTB.Text = CurrentAccaunt.Name;
-            
-           
         }
 
         private void AccauntInfoForm_Load(object sender, EventArgs e)
