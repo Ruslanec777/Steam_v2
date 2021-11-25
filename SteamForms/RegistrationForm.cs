@@ -21,6 +21,8 @@ namespace SteamForms
 
         public Form LocalParentForm { get ; set ; }
 
+        private bool _isRegDataValid = false;
+
 
 
         public RegistrationFormData RegFormData
@@ -70,6 +72,10 @@ namespace SteamForms
 
         private void regTryRegistrationBtn_Click(object sender, EventArgs e)
         {
+            if (_isRegDataValid=)
+            {
+
+            }
             Account tempAccount = AccountProvider.TryRegistrationAccaunt(RegFormData);
             if (tempAccount != null)
             {
@@ -77,6 +83,20 @@ namespace SteamForms
                 MainMenuForm.Show();
 
                 this.Close();
+            }
+        }
+
+        private void regSexComboBox_TextChanged(object sender, EventArgs e)
+        {
+            int age;
+
+            if (int.TryParse(RegAgeTB.Text,out age )&& age>6 && age<130==false)
+            {
+                RegAgeTB.BackColor = Color.Red;
+                _isRegDataValid = false;
+            } else
+            {
+                _isRegDataValid = true;
             }
         }
     }

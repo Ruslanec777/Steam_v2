@@ -41,7 +41,7 @@ namespace SteamForms
             // 
             this.mainMenuUserLabel.AutoSize = true;
             this.mainMenuUserLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainMenuUserLabel.Location = new System.Drawing.Point(12, 9);
+            this.mainMenuUserLabel.Location = new System.Drawing.Point(62, 9);
             this.mainMenuUserLabel.Name = "mainMenuUserLabel";
             this.mainMenuUserLabel.Size = new System.Drawing.Size(196, 37);
             this.mainMenuUserLabel.TabIndex = 6;
@@ -50,7 +50,7 @@ namespace SteamForms
             // mainAccInfoBtn
             // 
             this.mainAccInfoBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainAccInfoBtn.Location = new System.Drawing.Point(12, 49);
+            this.mainAccInfoBtn.Location = new System.Drawing.Point(62, 49);
             this.mainAccInfoBtn.Name = "mainAccInfoBtn";
             this.mainAccInfoBtn.Size = new System.Drawing.Size(392, 43);
             this.mainAccInfoBtn.TabIndex = 8;
@@ -61,7 +61,7 @@ namespace SteamForms
             // mainMenuQuitFromAccBtn
             // 
             this.mainMenuQuitFromAccBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainMenuQuitFromAccBtn.Location = new System.Drawing.Point(12, 245);
+            this.mainMenuQuitFromAccBtn.Location = new System.Drawing.Point(62, 245);
             this.mainMenuQuitFromAccBtn.Name = "mainMenuQuitFromAccBtn";
             this.mainMenuQuitFromAccBtn.Size = new System.Drawing.Size(392, 43);
             this.mainMenuQuitFromAccBtn.TabIndex = 9;
@@ -72,17 +72,18 @@ namespace SteamForms
             // MainMenuGameAreaBtn
             // 
             this.MainMenuGameAreaBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MainMenuGameAreaBtn.Location = new System.Drawing.Point(12, 196);
+            this.MainMenuGameAreaBtn.Location = new System.Drawing.Point(62, 196);
             this.MainMenuGameAreaBtn.Name = "MainMenuGameAreaBtn";
             this.MainMenuGameAreaBtn.Size = new System.Drawing.Size(392, 43);
             this.MainMenuGameAreaBtn.TabIndex = 10;
             this.MainMenuGameAreaBtn.Text = "Игровая зона";
             this.MainMenuGameAreaBtn.UseVisualStyleBackColor = true;
+            this.MainMenuGameAreaBtn.Click += new System.EventHandler(this.MainMenuGameAreaBtn_Click);
             // 
             // mainMenuGameShopBtn
             // 
             this.mainMenuGameShopBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainMenuGameShopBtn.Location = new System.Drawing.Point(12, 147);
+            this.mainMenuGameShopBtn.Location = new System.Drawing.Point(62, 147);
             this.mainMenuGameShopBtn.Name = "mainMenuGameShopBtn";
             this.mainMenuGameShopBtn.Size = new System.Drawing.Size(392, 43);
             this.mainMenuGameShopBtn.TabIndex = 11;
@@ -93,7 +94,7 @@ namespace SteamForms
             // mainBalanceBtn
             // 
             this.mainBalanceBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainBalanceBtn.Location = new System.Drawing.Point(12, 98);
+            this.mainBalanceBtn.Location = new System.Drawing.Point(62, 98);
             this.mainBalanceBtn.Name = "mainBalanceBtn";
             this.mainBalanceBtn.Size = new System.Drawing.Size(392, 43);
             this.mainBalanceBtn.TabIndex = 12;
@@ -105,7 +106,7 @@ namespace SteamForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 573);
+            this.ClientSize = new System.Drawing.Size(544, 661);
             this.Controls.Add(this.mainBalanceBtn);
             this.Controls.Add(this.mainMenuGameShopBtn);
             this.Controls.Add(this.MainMenuGameAreaBtn);

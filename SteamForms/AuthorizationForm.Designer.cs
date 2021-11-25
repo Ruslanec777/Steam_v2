@@ -39,7 +39,7 @@ namespace SteamForms
             // PasswordTB
             // 
             this.PasswordTB.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PasswordTB.Location = new System.Drawing.Point(63, 190);
+            this.PasswordTB.Location = new System.Drawing.Point(173, 279);
             this.PasswordTB.Name = "PasswordTB";
             this.PasswordTB.PlaceholderText = "Пароль";
             this.PasswordTB.Size = new System.Drawing.Size(179, 43);
@@ -49,7 +49,7 @@ namespace SteamForms
             // LoginingBtn
             // 
             this.LoginingBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LoginingBtn.Location = new System.Drawing.Point(63, 240);
+            this.LoginingBtn.Location = new System.Drawing.Point(173, 329);
             this.LoginingBtn.Name = "LoginingBtn";
             this.LoginingBtn.Size = new System.Drawing.Size(179, 43);
             this.LoginingBtn.TabIndex = 3;
@@ -60,7 +60,7 @@ namespace SteamForms
             // RegistrationBtn
             // 
             this.RegistrationBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegistrationBtn.Location = new System.Drawing.Point(63, 289);
+            this.RegistrationBtn.Location = new System.Drawing.Point(173, 378);
             this.RegistrationBtn.Name = "RegistrationBtn";
             this.RegistrationBtn.Size = new System.Drawing.Size(179, 43);
             this.RegistrationBtn.TabIndex = 4;
@@ -72,7 +72,7 @@ namespace SteamForms
             // 
             this.LoginTB.BackColor = System.Drawing.Color.White;
             this.LoginTB.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LoginTB.Location = new System.Drawing.Point(63, 141);
+            this.LoginTB.Location = new System.Drawing.Point(173, 230);
             this.LoginTB.Name = "LoginTB";
             this.LoginTB.PlaceholderText = "Логин";
             this.LoginTB.Size = new System.Drawing.Size(179, 43);
@@ -82,7 +82,7 @@ namespace SteamForms
             // 
             this.AutorizationLabel.AutoSize = true;
             this.AutorizationLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AutorizationLabel.Location = new System.Drawing.Point(63, 101);
+            this.AutorizationLabel.Location = new System.Drawing.Point(173, 190);
             this.AutorizationLabel.Name = "AutorizationLabel";
             this.AutorizationLabel.Size = new System.Drawing.Size(179, 37);
             this.AutorizationLabel.TabIndex = 0;
@@ -92,7 +92,7 @@ namespace SteamForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 495);
+            this.ClientSize = new System.Drawing.Size(544, 661);
             this.Controls.Add(this.RegistrationBtn);
             this.Controls.Add(this.LoginingBtn);
             this.Controls.Add(this.PasswordTB);

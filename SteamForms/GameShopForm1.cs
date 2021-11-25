@@ -66,5 +66,10 @@ namespace SteamForms
         {
 
         }
+
+        private void gameShopActionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

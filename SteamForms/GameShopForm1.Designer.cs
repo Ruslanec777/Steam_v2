@@ -53,12 +53,13 @@ namespace SteamForms
             this.gameShopActionLabel.Size = new System.Drawing.Size(360, 37);
             this.gameShopActionLabel.TabIndex = 7;
             this.gameShopActionLabel.Text = "Выберите игру для покупки";
+            this.gameShopActionLabel.Click += new System.EventHandler(this.gameShopActionLabel_Click);
             // 
             // GameShopForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 614);
+            this.ClientSize = new System.Drawing.Size(544, 661);
             this.Controls.Add(this.gameShopActionLabel);
             this.Controls.Add(this.label1);
             this.Name = "GameShopForm1";

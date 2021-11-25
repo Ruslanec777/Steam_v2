@@ -160,7 +160,7 @@ namespace SteamForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 620);
+            this.ClientSize = new System.Drawing.Size(544, 661);
             this.Controls.Add(this.regIdTB);
             this.Controls.Add(this.accInfBackBtn);
             this.Controls.Add(this.button2);

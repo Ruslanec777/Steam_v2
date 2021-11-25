@@ -125,6 +125,7 @@ namespace SteamForms
             this.regSexComboBox.Name = "regSexComboBox";
             this.regSexComboBox.Size = new System.Drawing.Size(342, 45);
             this.regSexComboBox.TabIndex = 18;
+            this.regSexComboBox.TextChanged += new System.EventHandler(this.regSexComboBox_TextChanged);
             // 
             // label1
             // 
@@ -151,7 +152,7 @@ namespace SteamForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 677);
+            this.ClientSize = new System.Drawing.Size(544, 661);
             this.Controls.Add(this.regTryRegistrationBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.regSexComboBox);

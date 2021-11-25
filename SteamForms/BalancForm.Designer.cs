@@ -30,7 +30,6 @@ namespace SteamForms
         private void InitializeComponent()
         {
             this.balancMenuRemoveManeyBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.balancMenuLabel = new System.Windows.Forms.Label();
             this.balancMenuAddManeyBtn = new System.Windows.Forms.Button();
             this.balancMenuIdNicNamelabel = new System.Windows.Forms.Label();
@@ -44,7 +43,7 @@ namespace SteamForms
             // balancMenuRemoveManeyBtn
             // 
             this.balancMenuRemoveManeyBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuRemoveManeyBtn.Location = new System.Drawing.Point(12, 348);
+            this.balancMenuRemoveManeyBtn.Location = new System.Drawing.Point(76, 348);
             this.balancMenuRemoveManeyBtn.Name = "balancMenuRemoveManeyBtn";
             this.balancMenuRemoveManeyBtn.Size = new System.Drawing.Size(392, 43);
             this.balancMenuRemoveManeyBtn.TabIndex = 18;
@@ -52,21 +51,11 @@ namespace SteamForms
             this.balancMenuRemoveManeyBtn.UseVisualStyleBackColor = true;
             this.balancMenuRemoveManeyBtn.Click += new System.EventHandler(this.balancMenuRemoveManeyBtn_Click);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(20, 624);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(392, 43);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Регистрация";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // balancMenuLabel
             // 
             this.balancMenuLabel.AutoSize = true;
             this.balancMenuLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuLabel.Location = new System.Drawing.Point(12, 9);
+            this.balancMenuLabel.Location = new System.Drawing.Point(76, 9);
             this.balancMenuLabel.Name = "balancMenuLabel";
             this.balancMenuLabel.Size = new System.Drawing.Size(376, 37);
             this.balancMenuLabel.TabIndex = 13;
@@ -75,7 +64,7 @@ namespace SteamForms
             // balancMenuAddManeyBtn
             // 
             this.balancMenuAddManeyBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuAddManeyBtn.Location = new System.Drawing.Point(12, 223);
+            this.balancMenuAddManeyBtn.Location = new System.Drawing.Point(76, 223);
             this.balancMenuAddManeyBtn.Name = "balancMenuAddManeyBtn";
             this.balancMenuAddManeyBtn.Size = new System.Drawing.Size(392, 43);
             this.balancMenuAddManeyBtn.TabIndex = 14;
@@ -87,7 +76,7 @@ namespace SteamForms
             // 
             this.balancMenuIdNicNamelabel.AutoSize = true;
             this.balancMenuIdNicNamelabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuIdNicNamelabel.Location = new System.Drawing.Point(12, 83);
+            this.balancMenuIdNicNamelabel.Location = new System.Drawing.Point(76, 83);
             this.balancMenuIdNicNamelabel.Name = "balancMenuIdNicNamelabel";
             this.balancMenuIdNicNamelabel.Size = new System.Drawing.Size(209, 37);
             this.balancMenuIdNicNamelabel.TabIndex = 19;
@@ -96,7 +85,7 @@ namespace SteamForms
             // balancMenuMAneyForAddTB
             // 
             this.balancMenuMAneyForAddTB.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuMAneyForAddTB.Location = new System.Drawing.Point(12, 272);
+            this.balancMenuMAneyForAddTB.Location = new System.Drawing.Point(76, 272);
             this.balancMenuMAneyForAddTB.Name = "balancMenuMAneyForAddTB";
             this.balancMenuMAneyForAddTB.PlaceholderText = " Сумма для зачисления ";
             this.balancMenuMAneyForAddTB.Size = new System.Drawing.Size(392, 43);
@@ -107,7 +96,7 @@ namespace SteamForms
             // 
             this.balancMenuBalInfLabel.AutoSize = true;
             this.balancMenuBalInfLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuBalInfLabel.Location = new System.Drawing.Point(12, 120);
+            this.balancMenuBalInfLabel.Location = new System.Drawing.Point(76, 120);
             this.balancMenuBalInfLabel.Name = "balancMenuBalInfLabel";
             this.balancMenuBalInfLabel.Size = new System.Drawing.Size(222, 37);
             this.balancMenuBalInfLabel.TabIndex = 21;
@@ -117,7 +106,7 @@ namespace SteamForms
             // 
             this.balancMenuUserInfolabel.AutoSize = true;
             this.balancMenuUserInfolabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuUserInfolabel.Location = new System.Drawing.Point(12, 46);
+            this.balancMenuUserInfolabel.Location = new System.Drawing.Point(76, 46);
             this.balancMenuUserInfolabel.Name = "balancMenuUserInfolabel";
             this.balancMenuUserInfolabel.Size = new System.Drawing.Size(181, 37);
             this.balancMenuUserInfolabel.TabIndex = 22;
@@ -127,7 +116,7 @@ namespace SteamForms
             // 
             this.balancMenuBalancLabel.AutoSize = true;
             this.balancMenuBalancLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuBalancLabel.Location = new System.Drawing.Point(12, 157);
+            this.balancMenuBalancLabel.Location = new System.Drawing.Point(76, 157);
             this.balancMenuBalancLabel.Name = "balancMenuBalancLabel";
             this.balancMenuBalancLabel.Size = new System.Drawing.Size(215, 37);
             this.balancMenuBalancLabel.TabIndex = 23;
@@ -136,7 +125,7 @@ namespace SteamForms
             // balancMenuMAneyForRemoveTB
             // 
             this.balancMenuMAneyForRemoveTB.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.balancMenuMAneyForRemoveTB.Location = new System.Drawing.Point(12, 397);
+            this.balancMenuMAneyForRemoveTB.Location = new System.Drawing.Point(76, 397);
             this.balancMenuMAneyForRemoveTB.Name = "balancMenuMAneyForRemoveTB";
             this.balancMenuMAneyForRemoveTB.PlaceholderText = "Сумма списания с баланса";
             this.balancMenuMAneyForRemoveTB.Size = new System.Drawing.Size(392, 43);
@@ -147,7 +136,7 @@ namespace SteamForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 572);
+            this.ClientSize = new System.Drawing.Size(544, 661);
             this.Controls.Add(this.balancMenuMAneyForRemoveTB);
             this.Controls.Add(this.balancMenuBalancLabel);
             this.Controls.Add(this.balancMenuUserInfolabel);
@@ -155,7 +144,6 @@ namespace SteamForms
             this.Controls.Add(this.balancMenuMAneyForAddTB);
             this.Controls.Add(this.balancMenuIdNicNamelabel);
             this.Controls.Add(this.balancMenuRemoveManeyBtn);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.balancMenuLabel);
             this.Controls.Add(this.balancMenuAddManeyBtn);
             this.Name = "BalancForm";
@@ -170,7 +158,6 @@ namespace SteamForms
         #endregion
 
         private System.Windows.Forms.Button balancMenuRemoveManeyBtn;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label balancMenuLabel;
         private System.Windows.Forms.Button balancMenuAddManeyBtn;
         private System.Windows.Forms.Label balancMenuIdNicNamelabel;
