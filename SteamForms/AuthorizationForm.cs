@@ -31,7 +31,8 @@ namespace SteamForms
             if (tempAccount!=null)
             {
                 SteamClient.CurrentAccaunt = tempAccount;
-                // запускаем форму MainMenu
+                MainMenuForm.Show();
+                this.Close();
             }
             else
             {

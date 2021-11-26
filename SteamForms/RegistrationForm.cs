@@ -23,8 +23,6 @@ namespace SteamForms
 
         private bool _isRegDataValid = false;
 
-
-
         public RegistrationFormData RegFormData
         {
             get
@@ -87,11 +85,6 @@ namespace SteamForms
             }
         }
 
-        private void regSexComboBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void RegAgeTB_TextChanged(object sender, EventArgs e)
         {
             int age;
@@ -105,6 +98,20 @@ namespace SteamForms
             {
                 _isRegDataValid = true;
                 RegAgeTB.BackColor = Color.White;
+            }
+        }
+
+        private void RegLoginTB_TextChanged(object sender, EventArgs e)
+        {
+            if (AccountProvider.FindAccountToLigin(RegLoginTB.Text)!=null)
+            {
+                regTryRegistrationBtn.Enabled = false;
+                RegLoginTB.BackColor = Color.Red;
+            }
+            else
+            {
+                regTryRegistrationBtn.Enabled = true;
+                RegLoginTB.BackColor = Color.White;
             }
         }
     }

@@ -22,12 +22,11 @@ namespace SteamForms
 
         private void MainMenuForm_Shown(object sender, EventArgs e)
         {
-            if (SteamClient.CurrentAccaunt == null)
-            {
-                this.Hide();
-                new AuthorizationForm(AccountProviderS, this).Show();
-            }
+
+
         }
+
+
 
         private void mainAccInfoBtn_Click(object sender, EventArgs e)
         {
@@ -36,12 +35,14 @@ namespace SteamForms
 
         private void mainBalanceBtn_Click(object sender, EventArgs e)
         {
-            new BalancForm(AccountProviderS,this).Show();
+            new BalancForm(AccountProviderS, this).Show();
         }
 
         private void mainMenuQuitFromAccBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
+            SteamClient.CurrentAccaunt.IsAuthorized = false;
+            SteamClient.CurrentAccaunt = null;
 
             new AuthorizationForm(AccountProviderS, this).Show();
         }
@@ -54,6 +55,28 @@ namespace SteamForms
         private void MainMenuGameAreaBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainMenuForm_VisibleChanged(object sender, EventArgs e)
+        {
+            bool b = this.Visible;
+            b = this.Visible;
+        }
+
+        private void MainMenuForm_Load(object sender, EventArgs e)
+        {
+
+            bool b = this.Visible;
+        }
+
+        private void MainMenuForm_Paint(object sender, PaintEventArgs e)
+        {
+            bool b = this.Visible;
+            if (SteamClient.CurrentAccaunt == null && this.Visible)
+            {
+                this.Hide();
+                new AuthorizationForm(AccountProviderS, this).Show();
+            }
         }
     }
 }

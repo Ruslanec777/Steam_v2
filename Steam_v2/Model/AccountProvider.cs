@@ -37,7 +37,7 @@ namespace App.Model
 
         }
 
-        private Account FindAccountToLigin(string login)
+        public Account FindAccountToLigin(string login)
         {
             Account account = accounts.FirstOrDefault(i => i.Login == login);
             if (account == null)

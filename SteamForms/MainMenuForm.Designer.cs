@@ -115,7 +115,10 @@ namespace SteamForms
             this.Controls.Add(this.mainAccInfoBtn);
             this.Name = "MainMenuForm";
             this.Text = "MainMenu";
+            this.Load += new System.EventHandler(this.MainMenuForm_Load);
             this.Shown += new System.EventHandler(this.MainMenuForm_Shown);
+            this.VisibleChanged += new System.EventHandler(this.MainMenuForm_VisibleChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainMenuForm_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

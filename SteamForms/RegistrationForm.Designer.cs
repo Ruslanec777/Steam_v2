@@ -70,6 +70,7 @@ namespace SteamForms
             this.RegLoginTB.PlaceholderText = "Логин";
             this.RegLoginTB.Size = new System.Drawing.Size(342, 43);
             this.RegLoginTB.TabIndex = 9;
+            this.RegLoginTB.TextChanged += new System.EventHandler(this.RegLoginTB_TextChanged);
             // 
             // RegAgeTB
             // 
@@ -125,7 +126,8 @@ namespace SteamForms
             this.regSexComboBox.Location = new System.Drawing.Point(97, 245);
             this.regSexComboBox.Name = "regSexComboBox";
             this.regSexComboBox.Size = new System.Drawing.Size(342, 45);
-            this.regSexComboBox.TabIndex = 18;            // 
+            this.regSexComboBox.TabIndex = 18;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
