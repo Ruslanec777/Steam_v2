@@ -57,6 +57,7 @@ namespace App.Model
                 return tempSting;
             }
         }
+        // игрпгнп
 
         public void AddMoney(decimal money)
         {
