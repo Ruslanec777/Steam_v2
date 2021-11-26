@@ -171,6 +171,7 @@ namespace SteamForms
             this.ShowIcon = false;
             this.Text = "RegistrationForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.RegistrationForm_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

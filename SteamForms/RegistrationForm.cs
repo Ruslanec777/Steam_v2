@@ -70,9 +70,10 @@ namespace SteamForms
 
         private void regTryRegistrationBtn_Click(object sender, EventArgs e)
         {
+                //_isRegDataValid = true;
+
             foreach (Control c in this.Controls)
             {
-                _isRegDataValid = true;
 
                 if (c.Text.Length == 0)
                 {
@@ -130,6 +131,17 @@ namespace SteamForms
         private void RegNameTB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RegistrationForm_Paint(object sender, PaintEventArgs e)
+        {
+            foreach(Control c in this.Controls)
+            {
+                if (c.Text.Length == 0)
+                {
+
+                }
+            }
         }
     }
 }
