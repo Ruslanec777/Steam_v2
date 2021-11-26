@@ -79,6 +79,7 @@ namespace SteamForms
             this.RegAgeTB.PlaceholderText = "Возраст";
             this.RegAgeTB.Size = new System.Drawing.Size(342, 43);
             this.RegAgeTB.TabIndex = 12;
+            this.RegAgeTB.TextChanged += new System.EventHandler(this.RegAgeTB_TextChanged);
             // 
             // RegNicNameTB
             // 
@@ -124,9 +125,7 @@ namespace SteamForms
             this.regSexComboBox.Location = new System.Drawing.Point(97, 245);
             this.regSexComboBox.Name = "regSexComboBox";
             this.regSexComboBox.Size = new System.Drawing.Size(342, 45);
-            this.regSexComboBox.TabIndex = 18;
-            this.regSexComboBox.TextChanged += new System.EventHandler(this.regSexComboBox_TextChanged);
-            // 
+            this.regSexComboBox.TabIndex = 18;            // 
             // label1
             // 
             this.label1.AutoSize = true;
