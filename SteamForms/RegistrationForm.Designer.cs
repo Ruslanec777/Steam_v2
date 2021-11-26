@@ -61,6 +61,7 @@ namespace SteamForms
             this.RegNameTB.PlaceholderText = "Имя";
             this.RegNameTB.Size = new System.Drawing.Size(342, 43);
             this.RegNameTB.TabIndex = 6;
+            this.RegNameTB.TextChanged += new System.EventHandler(this.RegNameTB_TextChanged);
             // 
             // RegLoginTB
             // 
@@ -127,6 +128,7 @@ namespace SteamForms
             this.regSexComboBox.Name = "regSexComboBox";
             this.regSexComboBox.Size = new System.Drawing.Size(342, 45);
             this.regSexComboBox.TabIndex = 18;
+            this.regSexComboBox.Text = "Мужской";
             // 
             // label1
             // 

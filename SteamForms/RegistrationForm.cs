@@ -70,11 +70,23 @@ namespace SteamForms
 
         private void regTryRegistrationBtn_Click(object sender, EventArgs e)
         {
+            foreach (Control c in this.Controls)
+            {
+                _isRegDataValid = true;
+
+                if (c.Text.Length == 0)
+                {
+                    _isRegDataValid = false;
+                }
+            }
+
             if (_isRegDataValid == false)
             {
                 MessageBox.Show("Введите корректные значения");
                 return;
             }
+
+
             Account tempAccount = AccountProvider.TryRegistrationAccaunt(RegFormData);
             if (tempAccount != null)
             {
@@ -103,7 +115,7 @@ namespace SteamForms
 
         private void RegLoginTB_TextChanged(object sender, EventArgs e)
         {
-            if (AccountProvider.FindAccountToLigin(RegLoginTB.Text)!=null)
+            if (AccountProvider.FindAccountToLigin(RegLoginTB.Text) != null)
             {
                 regTryRegistrationBtn.Enabled = false;
                 RegLoginTB.BackColor = Color.Red;
@@ -113,6 +125,11 @@ namespace SteamForms
                 regTryRegistrationBtn.Enabled = true;
                 RegLoginTB.BackColor = Color.White;
             }
+        }
+
+        private void RegNameTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
