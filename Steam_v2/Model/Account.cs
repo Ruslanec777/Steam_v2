@@ -20,7 +20,7 @@ namespace App.Model
         public bool IsAuthorized { get; set; }
         public string Fio { get; set; }
 
-        public Account(RegistrationFormData accountData)
+        public Account(RegistrationFormDTO accountData)
         {
             Id = Guid.NewGuid().ToString();
             Name = accountData.Name;

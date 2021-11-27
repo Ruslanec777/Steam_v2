@@ -23,14 +23,12 @@ namespace SteamForms
         private void MainMenuForm_Shown(object sender, EventArgs e)
         {
 
-
         }
-
-
 
         private void mainAccInfoBtn_Click(object sender, EventArgs e)
         {
-            new AccauntInfoForm(AccountProviderS, this).Show();
+            new AccountInfo(AccountProviderS, this).Show();
+            this.Hide();
         }
 
         private void mainBalanceBtn_Click(object sender, EventArgs e)
@@ -65,7 +63,6 @@ namespace SteamForms
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-
             bool b = this.Visible;
         }
 

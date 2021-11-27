@@ -23,7 +23,11 @@ namespace SteamForms
 
         private bool _isRegDataValid = false;
 
-        public RegistrationFormData RegFormData
+        public List<Control> NotValidList { get; set; }
+
+        public bool IsValidLogin { get; set; }
+
+        public RegistrationFormDTO RegFormDTO
         {
             get
             {
@@ -32,13 +36,12 @@ namespace SteamForms
                 int age;
                 int.TryParse(RegAgeTB.Text, out age);
 
-                RegistrationFormData accountData = new RegistrationFormData(RegNameTB.Text, RegPatronymicTB.Text, RegSurnameTB.Text, RegNicNameTB.Text,
+                RegistrationFormDTO accountData = new RegistrationFormDTO(RegNameTB.Text, RegPatronymicTB.Text, RegSurnameTB.Text, RegNicNameTB.Text,
                     sex, age, RegLoginTB.Text, RegPasswordTB.Text);
 
                 return accountData;
             }
         }
-
 
         public RegistrationForm(AccountProvider accountProvider)
         {
@@ -62,33 +65,57 @@ namespace SteamForms
             this.Close();
         }
 
-        private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Application.Exit();
-            //AuthorizationForm.Show();
-        }
-
         private void regTryRegistrationBtn_Click(object sender, EventArgs e)
         {
-                //_isRegDataValid = true;
+            //_isRegDataValid = true;
+            NotValidList = new List<Control>(0);
 
             foreach (Control c in this.Controls)
             {
+                if (c.Name== "LoginPictureBox1")
+                {
+                    continue;
+                }
 
                 if (c.Text.Length == 0)
                 {
-                    _isRegDataValid = false;
+                    NotValidList.Add(c);
+                    c.BackColor = Color.Red;
+                    continue;
+                }
+                else
+                {
+                    c.BackColor = Color.White;
+                }
+
+                switch (c.Name)
+                {
+                    case "RegAgeTB":
+                        int age;
+
+                        if ((int.TryParse(RegAgeTB.Text, out age) && age > 6 && age < 130) == false)
+                        {
+                            RegAgeTB.BackColor = Color.Red;
+                            NotValidList.Add(c);
+                        }
+                        else
+                        {
+                            RegAgeTB.BackColor = Color.White;
+                        }
+                        break;
+                    default:
+                        break;
                 }
             }
 
-            if (_isRegDataValid == false)
+            if (NotValidList.Count > 0)
             {
                 MessageBox.Show("Введите корректные значения");
                 return;
             }
 
 
-            Account tempAccount = AccountProvider.TryRegistrationAccaunt(RegFormData);
+            Account tempAccount = AccountProvider.TryRegistrationAccaunt(RegFormDTO);
             if (tempAccount != null)
             {
                 SteamClient.CurrentAccaunt = tempAccount;
@@ -98,50 +125,38 @@ namespace SteamForms
             }
         }
 
-        private void RegAgeTB_TextChanged(object sender, EventArgs e)
-        {
-            int age;
+        //private void RegAgeTB_TextChanged(object sender, EventArgs e)
+        //{
+        //    int age;
 
-            if ((int.TryParse(RegAgeTB.Text, out age) && age > 6 && age < 130) == false)
-            {
-                RegAgeTB.BackColor = Color.Red;
-                _isRegDataValid = false;
-            }
-            else
-            {
-                _isRegDataValid = true;
-                RegAgeTB.BackColor = Color.White;
-            }
-        }
+        //    if ((int.TryParse(RegAgeTB.Text, out age) && age > 6 && age < 130) == false)
+        //    {
+        //        RegAgeTB.BackColor = Color.Red;
+        //        _isRegDataValid = false;
+        //    }
+        //    else
+        //    {
+        //        _isRegDataValid = true;
+        //        RegAgeTB.BackColor = Color.White;
+        //    }
+        //}
 
         private void RegLoginTB_TextChanged(object sender, EventArgs e)
         {
             if (AccountProvider.FindAccountToLigin(RegLoginTB.Text) != null)
             {
-                regTryRegistrationBtn.Enabled = false;
-                RegLoginTB.BackColor = Color.Red;
+                LoginPictureBox1.Image = global::SteamForms.Properties.Resources._false;
+                IsValidLogin = false;
             }
             else
             {
                 regTryRegistrationBtn.Enabled = true;
                 RegLoginTB.BackColor = Color.White;
+                LoginPictureBox1.Image = global::SteamForms.Properties.Resources._true;
+                IsValidLogin = true;
             }
         }
 
-        private void RegNameTB_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void RegistrationForm_Paint(object sender, PaintEventArgs e)
-        {
-            foreach(Control c in this.Controls)
-            {
-                if (c.Text.Length == 0)
-                {
-
-                }
-            }
-        }
     }
 }

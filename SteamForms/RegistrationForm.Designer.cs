@@ -40,6 +40,8 @@ namespace SteamForms
             this.regSexComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.regTryRegistrationBtn = new System.Windows.Forms.Button();
+            this.LoginPictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // RegBackBtn
@@ -61,7 +63,7 @@ namespace SteamForms
             this.RegNameTB.PlaceholderText = "Имя";
             this.RegNameTB.Size = new System.Drawing.Size(342, 43);
             this.RegNameTB.TabIndex = 6;
-            this.RegNameTB.TextChanged += new System.EventHandler(this.RegNameTB_TextChanged);
+            this.RegNameTB.Tag = "Valid";
             // 
             // RegLoginTB
             // 
@@ -69,7 +71,7 @@ namespace SteamForms
             this.RegLoginTB.Location = new System.Drawing.Point(97, 343);
             this.RegLoginTB.Name = "RegLoginTB";
             this.RegLoginTB.PlaceholderText = "Логин";
-            this.RegLoginTB.Size = new System.Drawing.Size(342, 43);
+            this.RegLoginTB.Size = new System.Drawing.Size(297, 43);
             this.RegLoginTB.TabIndex = 9;
             this.RegLoginTB.TextChanged += new System.EventHandler(this.RegLoginTB_TextChanged);
             // 
@@ -81,7 +83,6 @@ namespace SteamForms
             this.RegAgeTB.PlaceholderText = "Возраст";
             this.RegAgeTB.Size = new System.Drawing.Size(342, 43);
             this.RegAgeTB.TabIndex = 12;
-            this.RegAgeTB.TextChanged += new System.EventHandler(this.RegAgeTB_TextChanged);
             // 
             // RegNicNameTB
             // 
@@ -147,15 +148,26 @@ namespace SteamForms
             this.regTryRegistrationBtn.Name = "regTryRegistrationBtn";
             this.regTryRegistrationBtn.Size = new System.Drawing.Size(342, 43);
             this.regTryRegistrationBtn.TabIndex = 19;
-            this.regTryRegistrationBtn.Text = "Регистрируем Аккаунт";
+            this.regTryRegistrationBtn.Text = "Зарегестрировать";
             this.regTryRegistrationBtn.UseVisualStyleBackColor = true;
             this.regTryRegistrationBtn.Click += new System.EventHandler(this.regTryRegistrationBtn_Click);
+            // 
+            // LoginPictureBox1
+            // 
+            this.LoginPictureBox1.Image = global::SteamForms.Properties.Resources._true;
+            this.LoginPictureBox1.Location = new System.Drawing.Point(401, 343);
+            this.LoginPictureBox1.Name = "LoginPictureBox1";
+            this.LoginPictureBox1.Size = new System.Drawing.Size(38, 42);
+            this.LoginPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LoginPictureBox1.TabIndex = 20;
+            this.LoginPictureBox1.TabStop = false;
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 661);
+            this.Controls.Add(this.LoginPictureBox1);
             this.Controls.Add(this.regTryRegistrationBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.regSexComboBox);
@@ -170,8 +182,7 @@ namespace SteamForms
             this.Name = "RegistrationForm";
             this.ShowIcon = false;
             this.Text = "RegistrationForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrationForm_FormClosing);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.RegistrationForm_Paint);
+            ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +200,6 @@ namespace SteamForms
         private System.Windows.Forms.ComboBox regSexComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button regTryRegistrationBtn;
+        private System.Windows.Forms.PictureBox LoginPictureBox1;
     }
 }
