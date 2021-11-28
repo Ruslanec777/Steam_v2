@@ -37,6 +37,40 @@ namespace App.Model
 
         }
 
+        public Account EditAccaunt(RegistrationFormDTO accountData)
+        {
+            Account tempAccaunt = FindAccountToId(accountData.Id);
+            if (tempAccaunt != null)
+            {
+                tempAccaunt.Name = accountData.Name;
+                tempAccaunt.Patronymic = accountData.Patronymic;
+                tempAccaunt.Surname = accountData.Surname;
+                tempAccaunt.NicName = accountData.NicName;
+                tempAccaunt.Sex = accountData.Sex;
+                tempAccaunt.Age = accountData.Age;
+                tempAccaunt.Login = accountData.Login;
+                tempAccaunt.Password = accountData.Password;
+                return tempAccaunt;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public Account FindAccountToId(string id)
+        {
+            Account account = accounts.FirstOrDefault(i => i.Id == id);
+            if (account == null)
+            {
+                return null;
+            }
+            return account;
+        }
+
+
+
         public Account FindAccountToLigin(string login)
         {
             Account account = accounts.FirstOrDefault(i => i.Login == login);
@@ -64,6 +98,7 @@ namespace App.Model
 
             return null;
         }
+
 
 
 

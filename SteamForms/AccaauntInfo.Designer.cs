@@ -36,7 +36,6 @@ namespace SteamForms
             this.infNicNameLab = new System.Windows.Forms.Label();
             this.infSurnameLab = new System.Windows.Forms.Label();
             this.infPanronimicLab = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.infNameLab = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.infSexLab = new System.Windows.Forms.Label();
@@ -56,7 +55,7 @@ namespace SteamForms
             // 
             this.infPassvordLab.AutoSize = true;
             this.infPassvordLab.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.infPassvordLab.Location = new System.Drawing.Point(70, 367);
+            this.infPassvordLab.Location = new System.Drawing.Point(70, 330);
             this.infPassvordLab.Name = "infPassvordLab";
             this.infPassvordLab.Size = new System.Drawing.Size(90, 37);
             this.infPassvordLab.TabIndex = 22;
@@ -66,7 +65,7 @@ namespace SteamForms
             // 
             this.infLoginLab.AutoSize = true;
             this.infLoginLab.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.infLoginLab.Location = new System.Drawing.Point(70, 330);
+            this.infLoginLab.Location = new System.Drawing.Point(70, 293);
             this.infLoginLab.Name = "infLoginLab";
             this.infLoginLab.Size = new System.Drawing.Size(90, 37);
             this.infLoginLab.TabIndex = 23;
@@ -76,7 +75,7 @@ namespace SteamForms
             // 
             this.infAgeLab.AutoSize = true;
             this.infAgeLab.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.infAgeLab.Location = new System.Drawing.Point(70, 293);
+            this.infAgeLab.Location = new System.Drawing.Point(70, 256);
             this.infAgeLab.Name = "infAgeLab";
             this.infAgeLab.Size = new System.Drawing.Size(90, 37);
             this.infAgeLab.TabIndex = 24;
@@ -86,7 +85,7 @@ namespace SteamForms
             // 
             this.infNicNameLab.AutoSize = true;
             this.infNicNameLab.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.infNicNameLab.Location = new System.Drawing.Point(70, 219);
+            this.infNicNameLab.Location = new System.Drawing.Point(70, 182);
             this.infNicNameLab.Name = "infNicNameLab";
             this.infNicNameLab.Size = new System.Drawing.Size(90, 37);
             this.infNicNameLab.TabIndex = 25;
@@ -96,7 +95,7 @@ namespace SteamForms
             // 
             this.infSurnameLab.AutoSize = true;
             this.infSurnameLab.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.infSurnameLab.Location = new System.Drawing.Point(70, 182);
+            this.infSurnameLab.Location = new System.Drawing.Point(70, 145);
             this.infSurnameLab.Name = "infSurnameLab";
             this.infSurnameLab.Size = new System.Drawing.Size(90, 37);
             this.infSurnameLab.TabIndex = 26;
@@ -106,21 +105,11 @@ namespace SteamForms
             // 
             this.infPanronimicLab.AutoSize = true;
             this.infPanronimicLab.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.infPanronimicLab.Location = new System.Drawing.Point(70, 145);
+            this.infPanronimicLab.Location = new System.Drawing.Point(70, 108);
             this.infPanronimicLab.Name = "infPanronimicLab";
             this.infPanronimicLab.Size = new System.Drawing.Size(90, 37);
             this.infPanronimicLab.TabIndex = 27;
             this.infPanronimicLab.Text = "label1";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(70, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 37);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "label1";
             // 
             // infNameLab
             // 
@@ -147,7 +136,7 @@ namespace SteamForms
             // 
             this.infSexLab.AutoSize = true;
             this.infSexLab.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.infSexLab.Location = new System.Drawing.Point(70, 256);
+            this.infSexLab.Location = new System.Drawing.Point(70, 219);
             this.infSexLab.Name = "infSexLab";
             this.infSexLab.Size = new System.Drawing.Size(90, 37);
             this.infSexLab.TabIndex = 31;
@@ -161,7 +150,6 @@ namespace SteamForms
             this.Controls.Add(this.infSexLab);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.infNameLab);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.infPanronimicLab);
             this.Controls.Add(this.infSurnameLab);
             this.Controls.Add(this.infNicNameLab);
@@ -172,6 +160,7 @@ namespace SteamForms
             this.Name = "AccountInfo";
             this.Text = "AccauntInfo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccountInfo_FormClosed);
+            this.VisibleChanged += new System.EventHandler(this.AccountInfo_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +175,6 @@ namespace SteamForms
         private System.Windows.Forms.Label infNicNameLab;
         private System.Windows.Forms.Label infSurnameLab;
         private System.Windows.Forms.Label infPanronimicLab;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label infNameLab;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label infSexLab;

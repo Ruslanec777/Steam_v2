@@ -21,8 +21,6 @@ namespace SteamForms
 
         public Form LocalParentForm { get; set; }
 
-        private bool _isRegDataValid = false;
-
         public List<Control> NotValidList { get; set; }
 
         public bool IsValidLogin { get; set; }
@@ -37,7 +35,7 @@ namespace SteamForms
                 int.TryParse(RegAgeTB.Text, out age);
 
                 RegistrationFormDTO accountData = new RegistrationFormDTO(RegNameTB.Text, RegPatronymicTB.Text, RegSurnameTB.Text, RegNicNameTB.Text,
-                    sex, age, RegLoginTB.Text, RegPasswordTB.Text);
+                    sex, age, RegLoginTB.Text, RegPasswordTB.Text ,String.Empty);
 
                 return accountData;
             }
@@ -124,22 +122,6 @@ namespace SteamForms
                 this.Close();
             }
         }
-
-        //private void RegAgeTB_TextChanged(object sender, EventArgs e)
-        //{
-        //    int age;
-
-        //    if ((int.TryParse(RegAgeTB.Text, out age) && age > 6 && age < 130) == false)
-        //    {
-        //        RegAgeTB.BackColor = Color.Red;
-        //        _isRegDataValid = false;
-        //    }
-        //    else
-        //    {
-        //        _isRegDataValid = true;
-        //        RegAgeTB.BackColor = Color.White;
-        //    }
-        //}
 
         private void RegLoginTB_TextChanged(object sender, EventArgs e)
         {

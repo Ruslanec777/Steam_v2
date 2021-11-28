@@ -5,6 +5,7 @@ namespace App.Model
 {
     public class RegistrationFormDTO
     {
+        public String Id { get; set; }
         /// <summary>
         /// имя
         /// </summary>
@@ -38,8 +39,8 @@ namespace App.Model
         /// </summary>
         public string Password { get; set; }
 
-        public RegistrationFormDTO(string name, string patronymic, string surname, string nicName, 
-            Sex sex, int age, string login, string password)
+        public RegistrationFormDTO( string name, string patronymic, string surname, string nicName, 
+            Sex sex, int age, string login, string password ,string id)
         {
             Name = name;
             Patronymic = patronymic;
@@ -49,6 +50,7 @@ namespace App.Model
             Age = age;     
             Login = login;
             Password = password;
+            Id = id;
         }
     }
 }
