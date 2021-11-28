@@ -154,7 +154,7 @@ namespace SteamForms
             // 
             // LoginPictureBox1
             // 
-            this.LoginPictureBox1.Image = global::SteamForms.Properties.Resources._true;
+            this.LoginPictureBox1.Image = global::SteamForms.Properties.Resources._false;
             this.LoginPictureBox1.Location = new System.Drawing.Point(401, 343);
             this.LoginPictureBox1.Name = "LoginPictureBox1";
             this.LoginPictureBox1.Size = new System.Drawing.Size(38, 42);
@@ -182,6 +182,7 @@ namespace SteamForms
             this.Name = "RegistrationForm";
             this.ShowIcon = false;
             this.Text = "RegistrationForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrationForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.LoginPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

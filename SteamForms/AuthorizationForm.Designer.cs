@@ -101,6 +101,7 @@ namespace SteamForms
             this.Name = "AuthorizationForm";
             this.ShowIcon = false;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AuthorizationForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

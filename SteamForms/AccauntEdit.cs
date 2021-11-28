@@ -41,6 +41,8 @@ namespace SteamForms
             }
         }
 
+        public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public AccauntEdit(AccountProvider accountProvider, Form parent)
         {
             InitializeComponent();

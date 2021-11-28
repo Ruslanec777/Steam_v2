@@ -12,11 +12,13 @@ using System.Windows.Forms;
 
 namespace SteamForms
 {
-    public partial class AuthorizationForm : Form,ImenuForms
+    public partial class AuthorizationForm : Form, ImenuForms
     {
-        public MainMenuForm MainMenuForm{ get; set; }
+        public MainMenuForm MainMenuForm { get; set; }
         public AccountProvider AccountProvider { get; set; }
-        public Form LocalParentForm { get; set ; }
+        public Form LocalParentForm { get; set; }
+
+        public bool IsClosingThisForm { get; set; } 
 
         public AuthorizationForm(AccountProvider accountProvider, MainMenuForm mainMenuForm)
         {
@@ -28,7 +30,7 @@ namespace SteamForms
         private void LoginingBtn_Click(object sender, EventArgs e)
         {
             Account tempAccount = AccountProvider.TryLogining(LoginTB.Text, PasswordTB.Text);
-            if (tempAccount!=null)
+            if (tempAccount != null)
             {
                 SteamClient.CurrentAccaunt = tempAccount;
                 MainMenuForm.Show();
@@ -39,15 +41,23 @@ namespace SteamForms
                 LoginTB.BackColor = Color.Red;
                 MessageBox.Show("Неверный логин или пароль");
                 LoginTB.BackColor = Color.White;
-            }         
+            }
         }
 
         private void RegistrationBtn_Click(object sender, EventArgs e)
         {
-            RegistrationForm regForm = new RegistrationForm(AccountProvider ,MainMenuForm);
+            RegistrationForm regForm = new RegistrationForm(AccountProvider, MainMenuForm);
             regForm.Show();
-
+            IsClosingThisForm = true;
             this.Close();
+        }
+
+        private void AuthorizationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!IsClosingThisForm)
+            {
+                MainMenuForm.Close();
+            }
         }
     }
 }

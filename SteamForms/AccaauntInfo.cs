@@ -18,6 +18,7 @@ namespace SteamForms
 
         public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
+        public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public AccountInfo(AccountProvider accountProvider, Form parentForm)
         {
@@ -52,7 +53,7 @@ namespace SteamForms
 
         private void AccountInfo_VisibleChanged(object sender, EventArgs e)
         {
-            WriteAllFields();
+            WriteAllFields(); //
         }
     }
 }

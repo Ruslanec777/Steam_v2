@@ -35,11 +35,13 @@ namespace SteamForms
                 int.TryParse(RegAgeTB.Text, out age);
 
                 RegistrationFormDTO accountData = new RegistrationFormDTO(RegNameTB.Text, RegPatronymicTB.Text, RegSurnameTB.Text, RegNicNameTB.Text,
-                    sex, age, RegLoginTB.Text, RegPasswordTB.Text ,String.Empty);
+                    sex, age, RegLoginTB.Text, RegPasswordTB.Text, String.Empty);
 
                 return accountData;
             }
         }
+
+        public bool IsClosingThisForm { get ; set ; } = false;
 
         public RegistrationForm(AccountProvider accountProvider)
         {
@@ -70,7 +72,7 @@ namespace SteamForms
 
             foreach (Control c in this.Controls)
             {
-                if (c.Name== "LoginPictureBox1")
+                if (c.Name == "LoginPictureBox1")
                 {
                     continue;
                 }
@@ -118,14 +120,14 @@ namespace SteamForms
             {
                 SteamClient.CurrentAccaunt = tempAccount;
                 MainMenuForm.Show();
-
+                IsClosingThisForm = true;
                 this.Close();
             }
         }
 
         private void RegLoginTB_TextChanged(object sender, EventArgs e)
         {
-            if (AccountProvider.FindAccountToLigin(RegLoginTB.Text) != null)
+            if (RegLoginTB.Text.Length == 0 || AccountProvider.FindAccountToLigin(RegLoginTB.Text) != null)
             {
                 LoginPictureBox1.Image = global::SteamForms.Properties.Resources._false;
                 IsValidLogin = false;
@@ -139,6 +141,13 @@ namespace SteamForms
             }
         }
 
-
+        private void RegistrationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!IsClosingThisForm)
+            {
+                MainMenuForm.Close();
+            }
+            
+        }
     }
 }

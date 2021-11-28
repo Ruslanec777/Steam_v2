@@ -17,6 +17,7 @@ namespace SteamForms
     {
         public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
+        public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public GameShopForm1(AccountProvider accountProvider, Form parentForm)
         {

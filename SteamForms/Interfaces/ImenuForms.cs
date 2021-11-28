@@ -12,5 +12,7 @@ namespace SteamForms.Interfaces
     {
         public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
+
+        public bool IsClosingThisForm { get; set; }
     }
 }
