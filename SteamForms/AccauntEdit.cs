@@ -22,9 +22,7 @@ namespace SteamForms
         public List<Control> NotValidList { get; set; }
 
         public bool IsValidLogin { get; set; }
-
         public string CurrentLogin { get; set; }
-
         public RegistrationFormDTO RegFormDTO
         {
             get

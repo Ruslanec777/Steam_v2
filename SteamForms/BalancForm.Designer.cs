@@ -90,7 +90,7 @@ namespace SteamForms
             this.balancMenuMAneyForAddTB.PlaceholderText = " Сумма для зачисления ";
             this.balancMenuMAneyForAddTB.Size = new System.Drawing.Size(392, 43);
             this.balancMenuMAneyForAddTB.TabIndex = 20;
-            this.balancMenuMAneyForAddTB.TextChanged += new System.EventHandler(this.balancMenuMAneyForAddTB_TextChanged);
+            this.balancMenuMAneyForAddTB.TextChanged += new System.EventHandler(this.balancMenuManeyForAddTB_TextChanged);
             // 
             // balancMenuBalInfLabel
             // 

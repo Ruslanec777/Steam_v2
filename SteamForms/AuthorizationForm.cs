@@ -34,6 +34,7 @@ namespace SteamForms
             {
                 SteamClient.CurrentAccaunt = tempAccount;
                 MainMenuForm.Show();
+                IsClosingThisForm = true;
                 this.Close();
             }
             else

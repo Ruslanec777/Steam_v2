@@ -57,15 +57,25 @@ namespace App.Model
                 return tempSting;
             }
         }
-        // игрпгнп
 
-        public void AddMoney(decimal money)
+        public bool AddMoney(decimal money)
         {
+            if (money>0)
+            {
             Balance += money;
+                return true;
+            }else
+            {
+                return false;
+            }
         }
 
         public decimal RemoveMoney(decimal money)
         {
+            if (money<0)
+            {
+                return 0;
+            }
             if (Balance > money)
             {
                 Balance -= money;

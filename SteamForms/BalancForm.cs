@@ -13,10 +13,10 @@ using static App.Model.SteamClient;
 
 namespace SteamForms
 {
-    public partial class BalancForm : Form,ImenuForms
+    public partial class BalancForm : Form, ImenuForms
     {
-        public AccountProvider AccountProvider { get ; set ; }
-        public Form LocalParentForm { get; set ; }
+        public AccountProvider AccountProvider { get; set; }
+        public Form LocalParentForm { get; set; }
         public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public BalancForm(AccountProvider accountProvider, Form parentForm)
@@ -43,14 +43,15 @@ namespace SteamForms
             LocalParentForm.Show();
         }
 
-        private void balancMenuMAneyForAddTB_TextChanged(object sender, EventArgs e)
+        private void balancMenuManeyForAddTB_TextChanged(object sender, EventArgs e)
         {
             decimal tempVar;
-            
-            if (decimal.TryParse(balancMenuMAneyForAddTB.Text, out tempVar)==false)
+
+            if (!decimal.TryParse(balancMenuMAneyForAddTB.Text, out tempVar) || tempVar < 0)
             {
                 balancMenuAddManeyBtn.Enabled = false;
-            }else
+            }
+            else
             {
                 balancMenuAddManeyBtn.Enabled = true;
             }
@@ -60,9 +61,12 @@ namespace SteamForms
         {
             decimal maneyForAction;
 
-            if (decimal.TryParse(balancMenuMAneyForAddTB.Text, out maneyForAction))
+            if (decimal.TryParse(balancMenuMAneyForAddTB.Text, out maneyForAction) && maneyForAction > 0)
             {
-                CurrentAccaunt.AddMoney(maneyForAction);
+                if (!CurrentAccaunt.AddMoney(maneyForAction))
+                {
+                    MessageBox.Show("Не удалось добавить средства на счет");
+                }
 
                 balancMenuBalancLabel.Text = CurrentAccaunt.Balance.ToString();
 
@@ -74,9 +78,9 @@ namespace SteamForms
         {
             decimal maneyForAction;
 
-            if (decimal.TryParse(balancMenuMAneyForRemoveTB.Text, out maneyForAction))
+            if (decimal.TryParse(balancMenuMAneyForRemoveTB.Text, out maneyForAction) && maneyForAction > 0)
             {
-                CurrentAccaunt.RemoveMoney(maneyForAction);
+                MessageBox.Show($"Выведено {CurrentAccaunt.RemoveMoney(maneyForAction).ToString()}");
 
                 balancMenuBalancLabel.Text = CurrentAccaunt.Balance.ToString();
 
@@ -88,7 +92,7 @@ namespace SteamForms
         {
             decimal tempVar;
 
-            if (decimal.TryParse(balancMenuMAneyForRemoveTB.Text, out tempVar) == false)
+            if (!decimal.TryParse(balancMenuMAneyForRemoveTB.Text, out tempVar) || tempVar < 0)
             {
                 balancMenuRemoveManeyBtn.Enabled = false;
             }
