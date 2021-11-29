@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,11 @@ namespace SteamForms
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //new SteamForms.ArtemForm.t
-           
+        }
+
+        public void PlacingPicturesGames(List<Game> games, int top, int left)
+        {
+
         }
     }
 }

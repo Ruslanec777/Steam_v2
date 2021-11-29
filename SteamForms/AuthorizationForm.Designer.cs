@@ -34,6 +34,7 @@ namespace SteamForms
             this.RegistrationBtn = new System.Windows.Forms.Button();
             this.LoginTB = new System.Windows.Forms.TextBox();
             this.AutorizationLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PasswordTB
@@ -88,11 +89,23 @@ namespace SteamForms
             this.AutorizationLabel.TabIndex = 0;
             this.AutorizationLabel.Text = "Авторизация";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Fuchsia;
+            this.button1.Location = new System.Drawing.Point(173, 460);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 81);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Запустить учебную таблицу";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 661);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.RegistrationBtn);
             this.Controls.Add(this.LoginingBtn);
             this.Controls.Add(this.PasswordTB);
@@ -113,6 +126,7 @@ namespace SteamForms
         private System.Windows.Forms.Button RegistrationBtn;
         private System.Windows.Forms.TextBox LoginTB;
         private System.Windows.Forms.Label AutorizationLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
