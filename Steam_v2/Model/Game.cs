@@ -1,4 +1,7 @@
-﻿
+﻿using System;
+using System.Drawing;
+using System.IO;
+
 namespace App.Model
 {
     public class Game
@@ -8,11 +11,15 @@ namespace App.Model
 
         public int Price { get; private set; }
 
-        public string imgPath { get; set; }
+        private string imgPath;
+        public string ImgPath
+        {
+            get { return imgPath; }
+            //set { imgPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\")) + value; }
+            set { imgPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\")) + "Steam_v2" + value; }
+        }
 
         private Account[] accounts = new Account[0];
-
-        // private  Account [] Accounts { get; set; }
 
         public Game(string name)
         {
@@ -23,6 +30,11 @@ namespace App.Model
                    : this(name)
         {
             Price = price;
+        }
+
+        public Game(string name, int price, string imgPath) : this(name, price)
+        {
+            this.ImgPath = imgPath;
         }
 
         public bool SaleGame(Account account)

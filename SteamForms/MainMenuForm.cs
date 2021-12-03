@@ -47,12 +47,12 @@ namespace SteamForms
 
         private void mainMenuGameShopBtn_Click(object sender, EventArgs e)
         {
-            new GameImajes().Show();
+            new GameShopForm1(AccountProviderS,this).Show();
         }
 
         private void MainMenuGameAreaBtn_Click(object sender, EventArgs e)
         {
-
+            new GameImajes().Show();
         }
 
         private void MainMenuForm_VisibleChanged(object sender, EventArgs e)

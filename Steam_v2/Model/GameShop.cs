@@ -8,7 +8,7 @@ namespace App.Model
 {
      public class GameShop
     {
-        public  List<Game> GamesList { get; set; } = new List<Game>() { new Game("Snake game", 100), new Game("Tetris", 200), new Game("CS", 300) };
+        public  List<Game> GamesList { get; set; } = new List<Game>() { new Game("Battle Field", 100 ,@"\img\bf.jpeg"), new Game("GTA", 200,@"\img\gta.jpg"), new Game("PUBG", 300 , @"\img\pubg.jpg") };
         public  string[] GamesNames
         {
             get

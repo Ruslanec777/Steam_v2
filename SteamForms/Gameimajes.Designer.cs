@@ -1,4 +1,9 @@
 ﻿
+using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+
 namespace SteamForms
 {
     partial class GameImajes
@@ -67,6 +72,7 @@ namespace SteamForms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // pictureBox2
             // 
@@ -77,6 +83,7 @@ namespace SteamForms
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // pictureBox3
             // 
@@ -118,7 +125,6 @@ namespace SteamForms
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(294, 425);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 50);

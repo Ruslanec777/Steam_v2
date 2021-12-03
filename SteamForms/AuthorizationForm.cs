@@ -18,7 +18,7 @@ namespace SteamForms
         public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
 
-        public bool IsClosingThisForm { get; set; } 
+        public bool IsClosingThisForm { get; set; }
 
         public AuthorizationForm(AccountProvider accountProvider, MainMenuForm mainMenuForm)
         {
@@ -60,10 +60,5 @@ namespace SteamForms
                 MainMenuForm.Close();
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            new TablForm().Show();        }
     }
 }

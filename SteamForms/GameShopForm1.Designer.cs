@@ -59,11 +59,16 @@ namespace SteamForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(544, 661);
             this.Controls.Add(this.gameShopActionLabel);
             this.Controls.Add(this.label1);
             this.Name = "GameShopForm1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GameShopForm1";
+            this.Load += new System.EventHandler(this.GameShopForm1_Load);
+            this.Shown += new System.EventHandler(this.GameShopForm1_Shown);
+            this.SizeChanged += new System.EventHandler(this.GameShopForm1_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,5 +78,6 @@ namespace SteamForms
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label gameShopActionLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

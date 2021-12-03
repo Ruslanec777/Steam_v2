@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static App.Model.SteamClient;
@@ -26,40 +27,53 @@ namespace SteamForms
             AccountProvider = accountProvider;
             LocalParentForm = parentForm;
 
-            BattonsRow(gameShop.GamesList, 40, 12);
+            this.WindowState = FormWindowState.Maximized;
+            Thread.Sleep(1000);
+            //ImageTabl(gameShop.GamesList, 40, 12);
         }
 
         // private void BattonsRow( List<object> list, int topParam =40, int leftParam =12 ) - не срабатывает почему то 
-        private void BattonsRow(List<Game> list, int topParam = 40, int leftParam = 12)
+        private void ImageTabl(List<Game> list, int topParam = 40, int leftParam = 12, int offsetLeft = 20, int offsetTop = 20)
         {
-            int top = gameShopActionLabel.Top + gameShopActionLabel.Height + 3;
+            int top = gameShopActionLabel.Top + gameShopActionLabel.Height + offsetTop;
             int left = gameShopActionLabel.Left;
 
+            int _startTop = top;
+            int _startLeft = left;
 
-            for (int i = 0; i < list.Count; i++)
+            int _hightPictur = 165;
+            int _widthPictur = 318;
+
+            int _hight = this.ClientSize.Height;
+            int _width = this.ClientSize.Width;
+
+            int i = 0;
+
+            for (int k = 0; k < list.Count * 5; k++)
             {
-                
-                Button button = new Button();
-                button.AutoSize = true;
-                button.Left = left;
-                button.Top = top;
-                button.Text = list[i].Name;
-                button.Size = new Size(gameShopActionLabel.Width, gameShopActionLabel.Height);
-                button.Font = new Font(button.Font.Name, 20, button.Font.Style);
-                //button.Font = 
-                this.Controls.Add(button);
+                i = k >= list.Count ? k % list.Count : k;
 
-                Label label = new Label();
-                label.AutoSize = true;
-                label.Left = left + button.Right + 5;
-                label.Top = top;
-                label.Font = new Font(gameShopActionLabel.Font.Name, 20, gameShopActionLabel.Font.Style);
-                label.Size = new Size(gameShopActionLabel.Width / 3, gameShopActionLabel.Height);
-                label.Text = $" цена:{ list[i].Price}";
-                //button.Font = 
-                this.Controls.Add(label);
+                PictureBox pictureBox = new PictureBox();
 
-                top += button.Height + 3;
+                pictureBox.Name = "pictureBox" + $"_{list[i].Name}";
+
+                if (left + _widthPictur > this.Size.Width)
+                {
+                    left = _startLeft;
+
+                    top += _hightPictur + offsetTop;
+                }
+                pictureBox.Top = top;
+                pictureBox.Left = left;
+
+                pictureBox.Size = new System.Drawing.Size(_widthPictur, _hightPictur);
+                pictureBox.Image = Image.FromFile(list[i].ImgPath);
+                pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                pictureBox.Click += new System.EventHandler(this.pictureBox1_Click_1);
+
+                this.Controls.Add(pictureBox);
+
+                left += pictureBox.Width + offsetLeft;
             }
         }
 
@@ -68,9 +82,32 @@ namespace SteamForms
 
         }
 
-        private void gameShopActionLabel_Click(object sender, EventArgs e)
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void gameShopActionLabel_Click(object sender, EventArgs e)
+        {
+            int hight = this.ClientSize.Height;
+            int width = this.ClientSize.Width;
+            hight = this.Size.Height;
+            width = this.Size.Width;
+        }
+
+        private void GameShopForm1_SizeChanged(object sender, EventArgs e)
+        {
+           // ImageTabl(gameShop.GamesList, 40, 12);
+        }
+
+        private void GameShopForm1_Load(object sender, EventArgs e)
+        {
+            ImageTabl(gameShop.GamesList, 40, 12);
+            
+        }
+
+        private void GameShopForm1_Shown(object sender, EventArgs e)
+        {
         }
     }
 }
