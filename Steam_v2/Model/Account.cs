@@ -19,6 +19,7 @@ namespace App.Model
         public string Password { get; set; }
         public bool IsAuthorized { get; set; }
         public string Fio { get; set; }
+        public Basket Basket { get; set; }
 
         public Account(RegistrationFormDTO accountData)
         {
