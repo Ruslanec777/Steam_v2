@@ -47,7 +47,10 @@ namespace SteamForms
 
         private void mainMenuGameShopBtn_Click(object sender, EventArgs e)
         {
-            new GameShopForm1(AccountProviderS,this).Show();
+            Form gameShopForm = new GameShopForm(AccountProviderS, this);
+            //gameShopForm.SetDesktopLocation=this.StartPosition
+            //gameShopForm.SetDesktopLocation() = this.Location();
+            gameShopForm.Show();
         }
 
         private void MainMenuGameAreaBtn_Click(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace SteamForms
         public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
         public bool IsClosingThisForm { get; set; }
+        public Game Game { get; set; }
 
         public BuyingGame(AccountProvider accountProvider, Form parentForm, Game game)
         {
@@ -30,7 +31,20 @@ namespace SteamForms
             GamePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
             GameNamelabel.Text = game.Name;
+
+            Game = game;
         }
 
+        private void GameAddBasketBtn_Click(object sender, EventArgs e)
+        {
+            SteamClient.CurrentAccaunt.GameAddToBasket(Game);
+            GameAddBasketBtn.Enabled = false;
+            GameAddBasketBtn.Text = "Игра добавлена в корзину";
+        }
+
+        private void RefuseBuyBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

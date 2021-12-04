@@ -39,5 +39,10 @@ namespace App.Model
                 return null;
 
         }
+
+        public Game GetGameByName(string name)
+        {
+            return GamesList.Where(x => x.Name == name).FirstOrDefault();                    
+        }
     }
 }

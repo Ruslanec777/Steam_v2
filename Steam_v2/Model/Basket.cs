@@ -8,7 +8,7 @@ namespace App.Model
 {
     public class Basket
     {
-        internal List<Game> Games { get; set; }
+        internal List<Game> Games { get; set; } = new List<Game>();
 
         internal bool AddGameToBasket(Game game)
         {

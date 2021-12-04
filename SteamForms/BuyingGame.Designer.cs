@@ -53,6 +53,7 @@ namespace SteamForms
             this.RefuseBuyBtn.TabIndex = 9;
             this.RefuseBuyBtn.Text = "Отказаться от покупки";
             this.RefuseBuyBtn.UseVisualStyleBackColor = true;
+            this.RefuseBuyBtn.Click += new System.EventHandler(this.RefuseBuyBtn_Click);
             // 
             // GameAddBasketBtn
             // 
@@ -63,6 +64,7 @@ namespace SteamForms
             this.GameAddBasketBtn.TabIndex = 10;
             this.GameAddBasketBtn.Text = "Добавить в корзину";
             this.GameAddBasketBtn.UseVisualStyleBackColor = true;
+            this.GameAddBasketBtn.Click += new System.EventHandler(this.GameAddBasketBtn_Click);
             // 
             // GameNamelabel
             // 

@@ -1,5 +1,6 @@
 ﻿using App.Model;
 using SteamForms.Interfaces;
+using SteamForms.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,13 @@ using static App.Model.SteamClient;
 
 namespace SteamForms
 {
-    public partial class GameShopForm1 : Form, ImenuForms
+    public partial class GameShopForm : Form, ImenuForms
     {
         public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
         public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public GameShopForm1(AccountProvider accountProvider, Form parentForm)
+        public GameShopForm(AccountProvider accountProvider, Form parentForm)
         {
 
             InitializeComponent();
@@ -85,6 +86,13 @@ namespace SteamForms
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+            PictureBox pictureBox = (PictureBox)sender;
+
+            string nameChosenGame = pictureBox.Name.Split('_')[1];
+
+            Game game = SteamClient.gameShop.GetGameByName(nameChosenGame);
+
+            new BuyingGame(AccountProvider, this, game).Show();
         }
 
         private void gameShopActionLabel_Click(object sender, EventArgs e)

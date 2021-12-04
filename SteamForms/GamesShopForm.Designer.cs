@@ -1,7 +1,7 @@
 ﻿
 namespace SteamForms
 {
-    partial class GameShopForm1
+    partial class GameShopForm
     {
         /// <summary>
         /// Required designer variable.

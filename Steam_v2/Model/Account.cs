@@ -1,5 +1,6 @@
 ﻿using Steam_v2.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace App.Model
 {
@@ -19,7 +20,8 @@ namespace App.Model
         public string Password { get; set; }
         public bool IsAuthorized { get; set; }
         public string Fio { get; set; }
-        public Basket Basket { get; set; }
+        public List<Game> Games = new List<Game>();
+        public Basket Basket = new Basket();
 
         public Account(RegistrationFormDTO accountData)
         {
@@ -43,15 +45,26 @@ namespace App.Model
             set { }
         }
 
-        public Game[] Games { get; set; } = Array.Empty<Game>();
+        public bool GameAddToBasket(Game game)
+        {
+            if (Games.Exists(x => x == game))
+            {
+                return false;
+            }
+            else
+            {
+                return Basket.AddGameToBasket(game);
+            }
+        }
+
 
         public string[] GamesNames
         {
             get
             {
-                string[] tempSting = new string[Games.Length];
+                string[] tempSting = new string[Games.Count];
 
-                for (int i = 0; i < Games.Length; i++)
+                for (int i = 0; i < Games.Count; i++)
                 {
                     tempSting[i] = Games[i].Name;
                 }
@@ -61,11 +74,12 @@ namespace App.Model
 
         public bool AddMoney(decimal money)
         {
-            if (money>0)
+            if (money > 0)
             {
-            Balance += money;
+                Balance += money;
                 return true;
-            }else
+            }
+            else
             {
                 return false;
             }
@@ -73,7 +87,7 @@ namespace App.Model
 
         public decimal RemoveMoney(decimal money)
         {
-            if (money<0)
+            if (money < 0)
             {
                 return 0;
             }
@@ -107,17 +121,10 @@ namespace App.Model
 
             return false;
         }
-        // нехватает знаний шаблонов
+
         public void AddGame(Game game)
         {
-            Game[] tempGames = new Game[Games.Length + 1];
-
-            for (int i = 0; i < tempGames.Length; i++)
-            {
-                tempGames[i] = i == tempGames.Length - 1 ? game : Games[i];
-            }
-
-            Games = tempGames;
+            Games.Add(game);
         }
 
         public string GetAccauntData()

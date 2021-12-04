@@ -1,4 +1,5 @@
 ﻿using App.Model;
+using SteamForms.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,13 +13,13 @@ using System.Windows.Forms;
 
 namespace SteamForms
 {
-    public partial class Basket : Form
+    public partial class Basket : Form ,ImenuForms
     {
         public AccountProvider AccountProvider { get; set; }
         public Form LocalParentForm { get; set; }
         public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public Basket(AccountProvider accountProvider, Form parentForm)
+        public Basket(AccountProvider accountProvider, Form parentForm ,List<Game> games )
         {
 
             InitializeComponent();
@@ -33,8 +34,8 @@ namespace SteamForms
         // private void BattonsRow( List<object> list, int topParam =40, int leftParam =12 ) - не срабатывает почему то 
         private void ImageTabl(List<Game> list, int topParam = 40, int leftParam = 12, int offsetLeft = 20, int offsetTop = 20)
         {
-            int top = gameShopActionLabel.Top + gameShopActionLabel.Height + offsetTop;
-            int left = gameShopActionLabel.Left;
+            int top = BasketLbl.Top + offsetTop;
+            int left = BasketLbl.Left;
 
             int _startTop = top;
             int _startLeft = left;
@@ -73,6 +74,11 @@ namespace SteamForms
 
                 left += pictureBox.Width + offsetLeft;
             }
+        }
+
+        public void pictureBox1_Click_1(object? sender, EventArgs e)
+        {
+
         }
     }
 }

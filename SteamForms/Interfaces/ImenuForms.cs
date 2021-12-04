@@ -14,5 +14,10 @@ namespace SteamForms.Interfaces
         public Form LocalParentForm { get; set; }
 
         public bool IsClosingThisForm { get; set; }
+
+        //public void ActionForClosing()
+        //{
+        //    (Form)this.
+        //}
     }
 }
