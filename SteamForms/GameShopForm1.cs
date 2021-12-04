@@ -36,16 +36,18 @@ namespace SteamForms
         private void ImageTabl(List<Game> list, int topParam = 40, int leftParam = 12, int offsetLeft = 20, int offsetTop = 20)
         {
             int top = gameShopActionLabel.Top + gameShopActionLabel.Height + offsetTop;
-            int left = gameShopActionLabel.Left;
-
-            int _startTop = top;
-            int _startLeft = left;
+            //int left = gameShopActionLabel.Left;
 
             int _hightPictur = 165;
             int _widthPictur = 318;
 
             int _hight = this.ClientSize.Height;
             int _width = this.ClientSize.Width;
+
+            int left= (_width- (_width / (_widthPictur + offsetLeft) * (_widthPictur + offsetLeft) ))/2;
+
+            int _startTop = top;
+            int _startLeft = left;
 
             int i = 0;
 
@@ -79,12 +81,10 @@ namespace SteamForms
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void gameShopActionLabel_Click(object sender, EventArgs e)
@@ -102,8 +102,7 @@ namespace SteamForms
 
         private void GameShopForm1_Load(object sender, EventArgs e)
         {
-            ImageTabl(gameShop.GamesList, 40, 12);
-            
+            ImageTabl(gameShop.GamesList, 40, 12);          
         }
 
         private void GameShopForm1_Shown(object sender, EventArgs e)
