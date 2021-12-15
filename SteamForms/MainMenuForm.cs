@@ -18,11 +18,9 @@ namespace SteamForms
         public MainMenuForm()
         {
             InitializeComponent();
-        }
+            // для теста
 
-        private void MainMenuForm_Shown(object sender, EventArgs e)
-        {
-
+            SteamClient.dataStorage.Load(out AccountProviderS.accounts, out GameShop.GamesList);
         }
 
         private void mainAccInfoBtn_Click(object sender, EventArgs e)
@@ -39,6 +37,7 @@ namespace SteamForms
         private void mainMenuQuitFromAccBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
+
             SteamClient.CurrentAccaunt.IsAuthorized = false;
             SteamClient.CurrentAccaunt = null;
 
@@ -55,7 +54,7 @@ namespace SteamForms
 
         private void MainMenuGameAreaBtn_Click(object sender, EventArgs e)
         {
-            new GameImajes().Show();
+            new UsersGameForm().Show();
         }
 
         private void MainMenuForm_VisibleChanged(object sender, EventArgs e)
@@ -77,6 +76,16 @@ namespace SteamForms
                 this.Hide();
                 new AuthorizationForm(AccountProviderS, this).Show();
             }
+        }
+
+        private void BasketBtn_Click(object sender, EventArgs e)
+        {
+            new BasketForm(AccountProviderS, this).Show();
+        }
+
+        private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
         }
     }
 }

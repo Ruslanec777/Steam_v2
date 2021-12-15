@@ -30,45 +30,30 @@ namespace SteamForms
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.gameShopActionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 37);
+            this.label1.Size = new System.Drawing.Size(225, 46);
             this.label1.TabIndex = 6;
             this.label1.Text = "Магазин игр";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // gameShopActionLabel
-            // 
-            this.gameShopActionLabel.AutoSize = true;
-            this.gameShopActionLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gameShopActionLabel.Location = new System.Drawing.Point(12, 46);
-            this.gameShopActionLabel.Name = "gameShopActionLabel";
-            this.gameShopActionLabel.Size = new System.Drawing.Size(360, 37);
-            this.gameShopActionLabel.TabIndex = 7;
-            this.gameShopActionLabel.Text = "Выберите игру для покупки";
-            this.gameShopActionLabel.Click += new System.EventHandler(this.gameShopActionLabel_Click);
-            // 
-            // GameShopForm1
+            // GameShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(544, 661);
-            this.Controls.Add(this.gameShopActionLabel);
             this.Controls.Add(this.label1);
-            this.Name = "GameShopForm1";
+            this.Name = "GameShopForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GameShopForm1";
             this.Load += new System.EventHandler(this.GameShopForm1_Load);
-            this.Shown += new System.EventHandler(this.GameShopForm1_Shown);
-            this.SizeChanged += new System.EventHandler(this.GameShopForm1_SizeChanged);
+            this.SizeChanged += new System.EventHandler(this.GameShopForm_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,7 +62,6 @@ namespace SteamForms
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label gameShopActionLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

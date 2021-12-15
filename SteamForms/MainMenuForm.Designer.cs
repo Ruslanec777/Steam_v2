@@ -35,6 +35,7 @@ namespace SteamForms
             this.MainMenuGameAreaBtn = new System.Windows.Forms.Button();
             this.mainMenuGameShopBtn = new System.Windows.Forms.Button();
             this.mainBalanceBtn = new System.Windows.Forms.Button();
+            this.BasketBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainMenuUserLabel
@@ -61,7 +62,7 @@ namespace SteamForms
             // mainMenuQuitFromAccBtn
             // 
             this.mainMenuQuitFromAccBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mainMenuQuitFromAccBtn.Location = new System.Drawing.Point(62, 245);
+            this.mainMenuQuitFromAccBtn.Location = new System.Drawing.Point(62, 294);
             this.mainMenuQuitFromAccBtn.Name = "mainMenuQuitFromAccBtn";
             this.mainMenuQuitFromAccBtn.Size = new System.Drawing.Size(392, 43);
             this.mainMenuQuitFromAccBtn.TabIndex = 9;
@@ -72,7 +73,7 @@ namespace SteamForms
             // MainMenuGameAreaBtn
             // 
             this.MainMenuGameAreaBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MainMenuGameAreaBtn.Location = new System.Drawing.Point(62, 196);
+            this.MainMenuGameAreaBtn.Location = new System.Drawing.Point(62, 245);
             this.MainMenuGameAreaBtn.Name = "MainMenuGameAreaBtn";
             this.MainMenuGameAreaBtn.Size = new System.Drawing.Size(392, 43);
             this.MainMenuGameAreaBtn.TabIndex = 10;
@@ -102,11 +103,23 @@ namespace SteamForms
             this.mainBalanceBtn.UseVisualStyleBackColor = true;
             this.mainBalanceBtn.Click += new System.EventHandler(this.mainBalanceBtn_Click);
             // 
+            // BasketBtn
+            // 
+            this.BasketBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BasketBtn.Location = new System.Drawing.Point(62, 196);
+            this.BasketBtn.Name = "BasketBtn";
+            this.BasketBtn.Size = new System.Drawing.Size(392, 43);
+            this.BasketBtn.TabIndex = 13;
+            this.BasketBtn.Text = "Корзина";
+            this.BasketBtn.UseVisualStyleBackColor = true;
+            this.BasketBtn.Click += new System.EventHandler(this.BasketBtn_Click);
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 661);
+            this.Controls.Add(this.BasketBtn);
             this.Controls.Add(this.mainBalanceBtn);
             this.Controls.Add(this.mainMenuGameShopBtn);
             this.Controls.Add(this.MainMenuGameAreaBtn);
@@ -115,8 +128,8 @@ namespace SteamForms
             this.Controls.Add(this.mainAccInfoBtn);
             this.Name = "MainMenuForm";
             this.Text = "MainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenuForm_FormClosing);
             this.Load += new System.EventHandler(this.MainMenuForm_Load);
-            this.Shown += new System.EventHandler(this.MainMenuForm_Shown);
             this.VisibleChanged += new System.EventHandler(this.MainMenuForm_VisibleChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainMenuForm_Paint);
             this.ResumeLayout(false);
@@ -132,5 +145,6 @@ namespace SteamForms
         private System.Windows.Forms.Button MainMenuGameAreaBtn;
         private System.Windows.Forms.Button mainMenuGameShopBtn;
         private System.Windows.Forms.Button mainBalanceBtn;
+        private System.Windows.Forms.Button BasketBtn;
     }
 }

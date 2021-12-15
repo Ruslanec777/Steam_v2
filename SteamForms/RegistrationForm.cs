@@ -119,10 +119,14 @@ namespace SteamForms
             if (tempAccount != null)
             {
                 SteamClient.CurrentAccaunt = tempAccount;
+                SteamClient.accauntProvider.accounts.Add(tempAccount);
+                SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
+
                 MainMenuForm.Show();
                 IsClosingThisForm = true;
                 this.Close();
             }
+
         }
 
         private void RegLoginTB_TextChanged(object sender, EventArgs e)
@@ -148,6 +152,11 @@ namespace SteamForms
                 MainMenuForm.Close();
             }
             
+        }
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

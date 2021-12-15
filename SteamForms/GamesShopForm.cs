@@ -1,15 +1,9 @@
 ﻿using App.Model;
 using SteamForms.Interfaces;
-using SteamForms.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static App.Model.SteamClient;
 
@@ -29,14 +23,13 @@ namespace SteamForms
             LocalParentForm = parentForm;
 
             this.WindowState = FormWindowState.Maximized;
-            Thread.Sleep(1000);
             //ImageTabl(gameShop.GamesList, 40, 12);
         }
 
         // private void BattonsRow( List<object> list, int topParam =40, int leftParam =12 ) - не срабатывает почему то 
         private void ImageTabl(List<Game> list, int topParam = 40, int leftParam = 12, int offsetLeft = 20, int offsetTop = 20)
         {
-            int top = gameShopActionLabel.Top + gameShopActionLabel.Height + offsetTop;
+            int top = label1.Top + label1.Height + offsetTop;
             //int left = gameShopActionLabel.Left;
 
             int _hightPictur = 165;
@@ -45,7 +38,7 @@ namespace SteamForms
             int _hight = this.ClientSize.Height;
             int _width = this.ClientSize.Width;
 
-            int left= (_width- (_width / (_widthPictur + offsetLeft) * (_widthPictur + offsetLeft) ))/2;
+            int left = (_width - (_width / (_widthPictur + offsetLeft) * (_widthPictur + offsetLeft))) / 2;
 
             int _startTop = top;
             int _startLeft = left;
@@ -80,41 +73,27 @@ namespace SteamForms
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
 
             string nameChosenGame = pictureBox.Name.Split('_')[1];
 
-            Game game = SteamClient.gameShop.GetGameByName(nameChosenGame);
+            Game game = GameShop.GetGameByName(nameChosenGame);
+
+            this.Hide();
 
             new BuyingGame(AccountProvider, this, game).Show();
         }
 
-        private void gameShopActionLabel_Click(object sender, EventArgs e)
-        {
-            int hight = this.ClientSize.Height;
-            int width = this.ClientSize.Width;
-            hight = this.Size.Height;
-            width = this.Size.Width;
-        }
-
-        private void GameShopForm1_SizeChanged(object sender, EventArgs e)
-        {
-           // ImageTabl(gameShop.GamesList, 40, 12);
-        }
-
         private void GameShopForm1_Load(object sender, EventArgs e)
         {
-            ImageTabl(gameShop.GamesList, 40, 12);          
+            ImageTabl(GameShop.GamesList, 40, 12);
         }
 
-        private void GameShopForm1_Shown(object sender, EventArgs e)
+        private void GameShopForm_SizeChanged(object sender, EventArgs e)
         {
+            ImageTabl(GameShop.GamesList, 40, 12);
         }
     }
 }

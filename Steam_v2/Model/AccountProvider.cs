@@ -4,13 +4,12 @@ using System.Linq;
 
 namespace App.Model
 {
-    public class AccountProvider
+    public  class AccountProvider
     {
 
-        public static List<Account> accounts = new List<Account>();
-        public Account TryLogining(string login, string password)
+        public List<Account> accounts = new List<Account>();
+        public  Account TryLogining(string login, string password)
         {
-
             Account tempAccaunt = FindAccountToLigin(login);
 
             if (tempAccaunt != null && tempAccaunt.Password == password)
@@ -20,7 +19,6 @@ namespace App.Model
 
                 return tempAccaunt;
             }
-
             return null;
         }
         public Account TryRegistrationAccaunt(RegistrationFormDTO accountData)
@@ -34,7 +32,6 @@ namespace App.Model
             {
                 return null;
             }
-
         }
 
         public Account EditAccaunt(RegistrationFormDTO accountData)
@@ -56,7 +53,6 @@ namespace App.Model
             {
                 return null;
             }
-
         }
 
         public Account FindAccountToId(string id)
@@ -69,8 +65,6 @@ namespace App.Model
             return account;
         }
 
-
-
         public Account FindAccountToLigin(string login)
         {
             Account account = accounts.FirstOrDefault(i => i.Login == login);
@@ -80,7 +74,6 @@ namespace App.Model
             }
             return account;
         }
-
 
         private Account AddNewAccaunt(Account account)
         {
@@ -98,9 +91,6 @@ namespace App.Model
 
             return null;
         }
-
-
-
 
         //private static Account AdminAccountInitializer()
         //{

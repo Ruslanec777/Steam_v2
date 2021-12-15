@@ -33,6 +33,7 @@ namespace SteamForms
             this.RefuseBuyBtn = new System.Windows.Forms.Button();
             this.GameAddBasketBtn = new System.Windows.Forms.Button();
             this.GameNamelabel = new System.Windows.Forms.Label();
+            this.Pricelabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GamePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +77,23 @@ namespace SteamForms
             this.GameNamelabel.TabIndex = 11;
             this.GameNamelabel.Text = "Название игры";
             // 
+            // Pricelabel
+            // 
+            this.Pricelabel.AutoSize = true;
+            this.Pricelabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Pricelabel.ForeColor = System.Drawing.Color.Red;
+            this.Pricelabel.Location = new System.Drawing.Point(25, 83);
+            this.Pricelabel.Name = "Pricelabel";
+            this.Pricelabel.Size = new System.Drawing.Size(96, 37);
+            this.Pricelabel.TabIndex = 12;
+            this.Pricelabel.Text = "label1";
+            // 
             // BuyingGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 661);
+            this.Controls.Add(this.Pricelabel);
             this.Controls.Add(this.GameNamelabel);
             this.Controls.Add(this.GameAddBasketBtn);
             this.Controls.Add(this.RefuseBuyBtn);
@@ -99,5 +112,6 @@ namespace SteamForms
         private System.Windows.Forms.Button RefuseBuyBtn;
         private System.Windows.Forms.Button GameAddBasketBtn;
         private System.Windows.Forms.Label GameNamelabel;
+        private System.Windows.Forms.Label Pricelabel;
     }
 }

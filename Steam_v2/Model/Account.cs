@@ -20,8 +20,14 @@ namespace App.Model
         public string Password { get; set; }
         public bool IsAuthorized { get; set; }
         public string Fio { get; set; }
+
         public List<Game> Games = new List<Game>();
+
         public Basket Basket = new Basket();
+
+        public Account()
+        { 
+        }
 
         public Account(RegistrationFormDTO accountData)
         {
@@ -47,12 +53,16 @@ namespace App.Model
 
         public bool GameAddToBasket(Game game)
         {
-            if (Games.Exists(x => x == game))
+            if (Games.Exists(x => x.Name == game.Name))
             {
                 return false;
             }
             else
             {
+                if (true)
+                {
+
+                }
                 return Basket.AddGameToBasket(game);
             }
         }
@@ -77,6 +87,9 @@ namespace App.Model
             if (money > 0)
             {
                 Balance += money;
+
+                SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
+
                 return true;
             }
             else
@@ -94,6 +107,9 @@ namespace App.Model
             if (Balance > money)
             {
                 Balance -= money;
+
+                SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
+
                 return money;
             }
             else
@@ -125,6 +141,8 @@ namespace App.Model
         public void AddGame(Game game)
         {
             Games.Add(game);
+
+            SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
         }
 
         public string GetAccauntData()
@@ -163,6 +181,7 @@ namespace App.Model
 
                 tempArraay[i] = games[i];
             }
+
 
             return tempArraay;
         }

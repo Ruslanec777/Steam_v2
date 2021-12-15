@@ -8,26 +8,33 @@ namespace App.Model
 {
     public class Basket
     {
-        internal List<Game> Games { get; set; } = new List<Game>();
+        public List<Game> Games { get; set; } = new List<Game>();
 
         internal bool AddGameToBasket(Game game)
         {
-            if (Games.Exists(x=>x.Name==game.Name))
+            if (Games.Exists(x => x.Name == game.Name))
             {
                 return false;
             }
             else
             {
                 Games.Add(game);
+
                 return true;
             }
         }
 
         public bool RemoveGame(Game game)
         {
-            return Games.Remove(game);
-        }
+            if (Games.Remove(game))
+            {
 
-        
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

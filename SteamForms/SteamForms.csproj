@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Games\**" />
+    <EmbeddedResource Remove="Games\**" />
+    <None Remove="Games\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="games.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Steam_v2\App.csproj" />
   </ItemGroup>
 

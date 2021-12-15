@@ -18,26 +18,11 @@ namespace SteamForms
     public partial class AccauntEdit : Form, ImenuForms
     {
         public AccountProvider AccountProvider { get; set; }
-        public  Form LocalParentForm { get; set; }
+        public Form LocalParentForm { get; set; }
         public List<Control> NotValidList { get; set; }
 
         public bool IsValidLogin { get; set; }
         public string CurrentLogin { get; set; }
-        public RegistrationFormDTO RegFormDTO
-        {
-            get
-            {
-                Sex sex = (editSexCBox.Text == "Мужской") ? Sex.Man : Sex.Woman;
-
-                int age;
-                int.TryParse(editAgeTB.Text, out age);
-
-                RegistrationFormDTO accountData = new RegistrationFormDTO(editNameTB.Text, editPatronymicTB.Text, editSurnameTB.Text, editNicNameTb.Text,
-                    sex, age, editLoginTB.Text, editPasswordTB.Text ,SteamClient.CurrentAccaunt.Id);
-
-                return accountData;
-            }
-        }
 
         public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -119,15 +104,23 @@ namespace SteamForms
                 return;
             }
 
+            Sex sex = (editSexCBox.Text == "Мужской") ? Sex.Man : Sex.Woman;
 
-            Account tempAccount = AccountProvider.EditAccaunt(RegFormDTO);
-            if (tempAccount != null)
+            int newAge;
+            int.TryParse(editAgeTB.Text, out newAge);
+
+            RegistrationFormDTO accountData = new RegistrationFormDTO(editNameTB.Text, editPatronymicTB.Text, editSurnameTB.Text, editNicNameTb.Text,
+                sex, newAge, editLoginTB.Text, editPasswordTB.Text, SteamClient.CurrentAccaunt.Id);
+
+
+            if (SteamClient.EditAccaunt(accountData))
             {
                 MessageBox.Show("Данные аккааунта отредактированы");
                 LocalParentForm.Show();
 
                 this.Close();
-            }else
+            }
+            else
             {
                 MessageBox.Show("Не удалось совершить редактирование");
             }
@@ -135,7 +128,7 @@ namespace SteamForms
 
         private void editLoginTB_TextChanged(object sender, EventArgs e)
         {
-            if (editLoginTB.Text.Length!=0 && (editLoginTB.Text==CurrentAccaunt.Login || (AccountProvider.FindAccountToLigin(editLoginTB.Text) == null)))
+            if (editLoginTB.Text.Length != 0 && (editLoginTB.Text == CurrentAccaunt.Login || (AccountProvider.FindAccountToLigin(editLoginTB.Text) == null)))
             {
                 editLoginTB.BackColor = Color.White;
                 LoginPictureBox1.Image = global::SteamForms.Properties.Resources._true;

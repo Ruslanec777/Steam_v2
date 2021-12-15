@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace App.Model
 {
-     public class GameShop
+     public  class GameShop
     {
-        public  List<Game> GamesList { get; set; } = new List<Game>() { new Game("Battle Field", 100 ,@"\img\bf.jpeg"), new Game("GTA", 200,@"\img\gta.jpg"), new Game("PUBG", 300 , @"\img\pubg.jpg") };
-        public  string[] GamesNames
+        public static List<Game> GamesList = new List<Game>();
+        //public static List<Game> GamesList;
+        public static string[] GamesNames
         {
             get
             {
@@ -23,13 +24,13 @@ namespace App.Model
             }
         }
 
-        public  Game BuyingGame(int indexGame)
+        public static Game BuyingGame(int indexGame)
         {
             Game currentGame = GamesList[indexGame];
 
             Account currentAccaunt = SteamClient.CurrentAccaunt;
 
-            if (currentGame.SaleGame(currentAccaunt))
+            if (currentGame.ByTheGame(currentAccaunt))
             {
                 currentAccaunt.AddGame(currentGame);
 
@@ -37,10 +38,29 @@ namespace App.Model
             }
             else
                 return null;
-
         }
 
-        public Game GetGameByName(string name)
+        public static Game BuyingGame(string gameName)
+        {
+            Game currentGame = GetGameByName(gameName);
+
+            if (currentGame==null)
+            {
+                return null;
+            }
+            Account currentAccaunt = SteamClient.CurrentAccaunt;
+
+            if (currentGame.ByTheGame(currentAccaunt))
+            {
+                currentAccaunt.AddGame(currentGame);
+
+                return currentGame;
+            }
+            else
+                return null;
+        }
+
+        public static Game GetGameByName(string name)
         {
             return GamesList.Where(x => x.Name == name).FirstOrDefault();                    
         }

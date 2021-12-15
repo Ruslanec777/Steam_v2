@@ -15,9 +15,5 @@ namespace SteamForms.Interfaces
 
         public bool IsClosingThisForm { get; set; }
 
-        //public void ActionForClosing()
-        //{
-        //    (Form)this.
-        //}
     }
 }

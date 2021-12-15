@@ -32,19 +32,32 @@ namespace SteamForms
 
             GameNamelabel.Text = game.Name;
 
+            Pricelabel.Text = "Цена " + game.Price.ToString();
+
             Game = game;
         }
 
         private void GameAddBasketBtn_Click(object sender, EventArgs e)
         {
-            SteamClient.CurrentAccaunt.GameAddToBasket(Game);
-            GameAddBasketBtn.Enabled = false;
-            GameAddBasketBtn.Text = "Игра добавлена в корзину";
+            if (SteamClient.CurrentAccaunt.Basket.Games.Exists(x => x.Name == Game.Name))
+            {
+                MessageBox.Show("Игра уже добавлена в корзину");
+                GameAddBasketBtn.Enabled = false;
+            }
+            else
+            {
+                SteamClient.CurrentAccaunt.GameAddToBasket(Game);
+                GameAddBasketBtn.Enabled = false;
+                GameAddBasketBtn.Text = "Игра добавлена в корзину";
+            }
+
+            RefuseBuyBtn.Text = "Выйти";
         }
 
         private void RefuseBuyBtn_Click(object sender, EventArgs e)
         {
-            
+            LocalParentForm.Show();
+            this.Close();
         }
     }
 }

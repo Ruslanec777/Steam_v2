@@ -1,25 +1,27 @@
 ﻿using System;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
+
+
 
 namespace App.Model
 {
     public class Game
     {
         private static long CountUnicID = 0;
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
-        public int Price { get; private set; }
+        public int Price { get; set; }
 
-        private string imgPath;
-        public string ImgPath
-        {
-            get { return imgPath; }
-            //set { imgPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\")) + value; }
-            set { imgPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\")) + "Steam_v2" + value; }
-        }
+        public string ImgPath { get; set; }
+
+        public string GamePath { get; set; }
+       
 
         private Account[] accounts = new Account[0];
+        public Game()
+        {
+        }
 
         public Game(string name)
         {
@@ -37,7 +39,12 @@ namespace App.Model
             this.ImgPath = imgPath;
         }
 
-        public bool SaleGame(Account account)
+        public Game(string name, int price, string imgPath, string gamePath) : this(name, price, imgPath)
+        {
+            GamePath = gamePath;
+        }
+
+        public bool ByTheGame(Account account)
         {
             if (account != null && account.Balance > Price)
             {
@@ -49,9 +56,20 @@ namespace App.Model
             return false;
         }
 
-        public void PlayTheGame()
+        public bool PlayTheGame()
         {
-            // вывести форму игры
+            //string str= this.GamePath;
+            string str = "C:\\WINDOWS\\system32\\notepad.exe";
+            if (File.Exists(str))
+            {
+                Process.Start(str, $"{this.GamePath}");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
     }
