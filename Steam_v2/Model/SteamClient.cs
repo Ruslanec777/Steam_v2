@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace App.Model
 {
@@ -7,8 +8,10 @@ namespace App.Model
         public static Account CurrentAccaunt { get; set; } = null;
 
         public static AccountProvider accauntProvider = new AccountProvider();
+         // Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\")) ;
 
-        public static DataStorage dataStorage = new DataStorage(System.IO.Directory.GetCurrentDirectory());
+
+        public static DataStorage dataStorage = new DataStorage(Path.GetFullPath(Path.Combine( Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\") ,"Saves")));
 
         public static GameShop gameShop = new GameShop();
 
