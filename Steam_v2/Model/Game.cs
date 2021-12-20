@@ -8,12 +8,12 @@ namespace App.Model
 {
     public class Game
     {
-        private static long CountUnicID = 0;
         public string Name { get; set; }
 
         public int Price { get; set; }
 
         public string ImgPath { get; set; }
+
 
         public string GamePath { get; set; }
        
@@ -62,11 +62,11 @@ namespace App.Model
             string str = "C:\\WINDOWS\\system32\\notepad.exe";
             if (File.Exists(str))
             {
-                Process.Start(str, $"{this.GamePath}");
+                Process.Start(str, $"{ Path.GetFullPath(Path.Combine(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\"),GamePath))}");
                 return true;
             }
             else
-            {
+            {               
                 return false;
             }
 

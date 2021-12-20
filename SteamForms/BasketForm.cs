@@ -54,6 +54,7 @@ namespace SteamForms
             }
             DeleteChousenItems();
             ReloadConrols();     
+            SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
             
         }
         private void deleteChosenBtn_Click(object sender, EventArgs e)
@@ -61,6 +62,7 @@ namespace SteamForms
             DeleteChousenItems();
             ReloadItemsText();
             ReloadConrols();
+            SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
         }
         private void DeleteChousenItems()
         {

@@ -2,6 +2,7 @@
 using SteamForms.Interfaces;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace SteamForms
@@ -21,7 +22,7 @@ namespace SteamForms
 
             LocalParentForm = parentForm;
 
-            GamePictureBox.Image = Image.FromFile(game.ImgPath);
+            GamePictureBox.Image = Image.FromFile(Path.GetFullPath(Path.Combine(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\"), game.ImgPath)));
             GamePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 
             GameNamelabel.Text = game.Name;
@@ -46,16 +47,11 @@ namespace SteamForms
 
         private void GameAddBasketBtn_Click(object sender, EventArgs e)
         {
-            if (SteamClient.CurrentAccaunt.Basket.Games.Exists(x => x.Name == Game.Name))
-            {
-                MessageBox.Show("Игра уже добавлена в корзину");
-                GameAddBasketBtn.Enabled = false;
-            }
-            else
+            if (!SteamClient.CurrentAccaunt.Basket.Games.Exists(x => x.Name == Game.Name))
             {
                 SteamClient.CurrentAccaunt.GameAddToBasket(Game);
                 GameAddBasketBtn.Enabled = false;
-                GameAddBasketBtn.Text = "Игра добавлена в корзину";
+                SteamClient.dataStorage.Save(SteamClient.accauntProvider.accounts);
                 LocalParentForm.Show();
                 this.Close();
             }

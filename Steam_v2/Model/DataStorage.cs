@@ -54,6 +54,10 @@ namespace App.Model
                 using (StreamReader sr = new StreamReader(Path.Combine(_pathToStorage, _accountsFileName)))
                 {
                     accounts = JsonConvert.DeserializeObject<List<Account>>(sr.ReadToEnd());
+                    if (accounts==null)
+                    {
+                accounts = new List<Account>();
+                    }
                 }
             }
             else

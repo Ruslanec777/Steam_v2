@@ -63,10 +63,7 @@ namespace App.Model
             }
             else
             {
-                if (true)
-                {
 
-                }
                 return Basket.AddGameToBasket(game);
             }
         }
