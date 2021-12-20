@@ -3,6 +3,7 @@ using SteamForms.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using static App.Model.SteamClient;
@@ -63,7 +64,7 @@ namespace SteamForms
                 pictureBox.Left = left;
 
                 pictureBox.Size = new System.Drawing.Size(_widthPictur, _hightPictur);
-                pictureBox.Image = Image.FromFile(list[i].ImgPath);
+                pictureBox.Image = Image.FromFile(Path.Combine(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\"),  list[i].ImgPath));
                 pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
                 pictureBox.Click += new System.EventHandler(this.pictureBox1_Click_1);
 

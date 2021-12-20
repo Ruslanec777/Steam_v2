@@ -1,0 +1,1 @@
+[{"Name":"Battle Field","Price":100,"ImgPath":"img\\bf.jpeg","GamePath":"Games\\bf.txt"},{"Name":"GTA","Price":200,"ImgPath":"img\\gta.jpg","GamePath":"Games\\gta.txt"},{"Name":"PUBG","Price":300,"ImgPath":"img\\pubg.jpg","GamePath":"Games\\pubg.txt"}]

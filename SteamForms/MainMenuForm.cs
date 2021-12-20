@@ -18,7 +18,6 @@ namespace SteamForms
         public MainMenuForm()
         {
             InitializeComponent();
-            // для теста
 
             SteamClient.dataStorage.Load(out AccountProviderS.accounts, out GameShop.GamesList);
         }
