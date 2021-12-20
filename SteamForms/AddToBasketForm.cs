@@ -1,13 +1,7 @@
 ﻿using App.Model;
 using SteamForms.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SteamForms
@@ -35,6 +29,19 @@ namespace SteamForms
             Pricelabel.Text = "Цена " + game.Price.ToString();
 
             Game = game;
+            // какой из способов предподчтительней ?
+            if (SteamClient.CurrentAccaunt.IsGameInAccount(Game.Name))
+            {
+                GameAddBasketBtn.Enabled = false;
+                GameNamelabel.Text += " : уже куплена";
+            }
+            // мне нравится этот
+            if (SteamClient.CurrentAccaunt.Basket.Games.Exists(x=>x.Name==Game.Name))
+            {
+                GameAddBasketBtn.Enabled = false;
+                GameNamelabel.Text += " : уже в корзине";
+            }
+
         }
 
         private void GameAddBasketBtn_Click(object sender, EventArgs e)
@@ -49,15 +56,9 @@ namespace SteamForms
                 SteamClient.CurrentAccaunt.GameAddToBasket(Game);
                 GameAddBasketBtn.Enabled = false;
                 GameAddBasketBtn.Text = "Игра добавлена в корзину";
+                LocalParentForm.Show();
+                this.Close();
             }
-
-            RefuseBuyBtn.Text = "Выйти";
-        }
-
-        private void RefuseBuyBtn_Click(object sender, EventArgs e)
-        {
-            LocalParentForm.Show();
-            this.Close();
         }
     }
 }

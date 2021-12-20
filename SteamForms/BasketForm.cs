@@ -2,7 +2,7 @@
 using SteamForms.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SteamForms
@@ -13,11 +13,9 @@ namespace SteamForms
         public Form LocalParentForm { get; set; }
         public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        private int _numberOfChosenGames;
+        private decimal _costOfSelectedGames;
 
-        private int _costOfSelectedGames;
-
-        private List<CheckBox> _checkBoxes = new List<CheckBox>();
+        private List<CheckBox> _checkBoxesText = new List<CheckBox>();
 
         private List<Game> _chousenGames = new List<Game>();
 
@@ -29,143 +27,79 @@ namespace SteamForms
 
             this.WindowState = FormWindowState.Maximized;
             //ImageTabl(SteamClient.CurrentAccaunt.Basket.Games, 40, 12);
-            balanceLbl.Text =  $"Ваш баланс: {SteamClient.CurrentAccaunt.Balance}";
-            ReloadItemsText();
             checkedListBox.CheckOnClick = true;
-
-            if (SteamClient.CurrentAccaunt.Balance>_costOfSelectedGames)
-            {
-            ByGamesBtn.Enabled = true;
-            }
-            else
-            {
-                ByGamesBtn.Enabled = false;
-            }
+            ReloadItemsText();
+            ReloadConrols();
         }
+        /// <summary>
+        /// Не включает в себя перезагрузку элементов ЧекЛиста
+        /// </summary>
+        private void ReloadConrols()
+        {          
+            ReLoadBalancLabel();
+            UpdateTheCostOfGames();
+            AllowButtonBy();
+        }
+
+
 
         // private void BattonsRow( List<object> list, int topParam =40, int leftParam =12 ) - не срабатывает почему то 
-        private void ImageTabl(List<Game> list, int topParam = 40, int leftParam = 12, int offsetLeft = 20, int offsetTop = 20)
-        {
-            int top = BasketActionLbl.Top + BasketActionLbl.Height + offsetTop;
-            int left = BasketActionLbl.Left;
 
-            int _startTop = top;
-            int _startLeft = left;
-
-            int _hightPictur = 165;
-            int _widthPictur = 318;
-
-            int _hightCheckBox = 50;
-            int _widthCheckBox = _widthPictur;
-
-            int _hight = this.ClientSize.Height;
-            int _width = this.ClientSize.Width;
-
-
-
-
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                //i = k >= list.Count ? k % list.Count : k;
-
-                PictureBox pictureBox = new PictureBox();
-
-                pictureBox.Name = "pictureBox" + $"_{list[i].Name}";
-
-                if (left + _widthPictur > this.Size.Width)
-                {
-                    left = _startLeft;
-
-                    top += _hightPictur + offsetTop * 2 + _hightCheckBox;
-                }
-                pictureBox.Top = top;
-                pictureBox.Left = left;
-
-                pictureBox.Size = new System.Drawing.Size(_widthPictur, _hightPictur);
-                pictureBox.Image = Image.FromFile(list[i].ImgPath);
-                pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-
-                this.Controls.Add(pictureBox);
-
-                CheckBox checkBox = new CheckBox();
-
-                checkBox.AutoSize = true;
-                checkBox.Location = new System.Drawing.Point(left, top + _hightPictur + offsetTop);
-                checkBox.Name = "checkBox " + $"_{list[i].Name}";
-                checkBox.Size = new System.Drawing.Size(_widthPictur, _hightCheckBox);
-                checkBox.TabIndex = 2;
-                checkBox.Text = "выбрать ";
-                checkBox.UseVisualStyleBackColor = true;
-                checkBox.BackColor = Color.Red;
-                _checkBoxes.Add(checkBox);
-                checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
-                this.Controls.Add(checkBox);
-
-                left += pictureBox.Width + offsetLeft;
-            }
-        }
-
-        private void BasketForm_Load(object sender, EventArgs e)
-        {
-            //ImageTabl(SteamClient.CurrentAccaunt.Basket.Games, 40, 12);
-        }
-
-        private void checkBox_CheckedChanged(object sender, EventArgs e)
-        {
-            _costOfSelectedGames = 0;
-            _numberOfChosenGames = 0;
-            _chousenGames =new List<Game>();
-
-            foreach (CheckBox locCheckBox in _checkBoxes)
-            {
-                if (locCheckBox.Checked)
-                {
-                    Game currentGame = GameShop.GetGameByName(locCheckBox.Name.Split('_')[1]);
-                    _chousenGames.Add(currentGame);
-                    _costOfSelectedGames += currentGame.Price;
-
-                }
-            }
-            if (SteamClient.CurrentAccaunt.Balance > _costOfSelectedGames)
-            {
-                ByGamesBtn.Enabled = true;
-            }
-            else
-            {
-                ByGamesBtn.Enabled = false;
-            }
-        }
-
-        //private void RewriteActionLabel()
-        //{
-        //    if (_chousenGames.Count==0)
-        //    {
-        //        BasketActionLbl.Text = "Игр не выбрано";
-        //    }
-        //    else
-        //    {
-        //        BasketActionLbl.Text = $"Выбрано {_chousenGames.Count} игр , на сумму {_costOfSelectedGames} $ ";
-        //    }
-        //}
 
         private void ByGamesBtn_Click(object sender, EventArgs e)
         {
-            foreach (Game currentGame in _chousenGames)
+            foreach (string currentGameName in checkedListBox.CheckedItems)
             {
-                GameShop.BuyingGame(currentGame.Name);
+                GameShop.BuyingGame(currentGameName);
             }
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach (var item in checkedListBox.SelectedItems)
-            {
-                _chousenGames.Add(GameShop.GetGameByName(item.ToString()));
-            }
+            DeleteChousenItems();
+            ReloadConrols();     
             
         }
+        private void deleteChosenBtn_Click(object sender, EventArgs e)
+        {
+            DeleteChousenItems();
+            ReloadItemsText();
+            ReloadConrols();
+        }
+        private void DeleteChousenItems()
+        {
+           List<string> listItemsText= new List<string>();
 
+            // непонятное действие , подсказано VS
+            //listItemsText.AddRange((IEnumerable<string>)checkedListBox.CheckedItems);
+            // не могу перебирать лист inems и изменять список игр в корзине , как то этот список связан с items чек листа , хотя нет перезаписи
+
+            //взято https://coderoad.ru/37748051/%D0%9A%D0%B0%D0%BA-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%8B-%D0%B4%D0%BB%D1%8F-CheckedItems-%D0%B2-CheckedListBox
+            //принцип работы не ясен
+            var texts = this.checkedListBox.CheckedItems.Cast<object>().Select(x => this.checkedListBox.GetItemText(x));
+
+            foreach (string nameGame in texts)
+            {
+                SteamClient.CurrentAccaunt.Basket.RemoveGameByName(nameGame);
+            }
+
+            ReloadItemsText();
+        }
+        private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReloadConrols();
+        }
+        private void UpdateTheCostOfGames()
+        {
+            decimal sum = 0;
+
+            foreach (string nameGame in checkedListBox.CheckedItems)
+            {
+                sum += GameShop.GetGameByName(nameGame).Price;
+            }
+            _costOfSelectedGames = sum;
+
+            BasketActionLbl.Text = $"Стоимость выбранных игр {sum }";
+        }
+        /// <summary>
+        /// Нельзя выполнять если зачеканные элементы не удаляются
+        /// </summary>
         private void ReloadItemsText()
         {
             checkedListBox.Items.Clear();
@@ -175,14 +109,20 @@ namespace SteamForms
                 checkedListBox.Items.Add(item.Name);
             }
         }
-
-        private void deleteChosenBtn_Click(object sender, EventArgs e)
+        private void AllowButtonBy()
         {
-            foreach (Game item in _chousenGames)
+            if (SteamClient.CurrentAccaunt.Balance >= _costOfSelectedGames)
             {
-                SteamClient.CurrentAccaunt.Basket.RemoveGame(item);
+                ByGamesBtn.Enabled = true;
             }
-                ReloadItemsText();
+            else
+            {
+                ByGamesBtn.Enabled = false;
+            }
+        }
+        private void ReLoadBalancLabel()
+        {
+            balanceLbl.Text = $"Ваш баланс: {SteamClient.CurrentAccaunt.Balance}";
         }
     }
 }

@@ -24,17 +24,10 @@ namespace App.Model
             }
         }
 
-        public bool RemoveGame(Game game)
+        public void RemoveGameByName(string nameGame)
         {
-            if (Games.Remove(game))
-            {
-
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            Game tempGame = (Games.FirstOrDefault(x => x.Name == nameGame));
+            Games.Remove(tempGame);            
         }
     }
 }

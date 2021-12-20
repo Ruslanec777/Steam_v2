@@ -21,12 +21,12 @@ namespace SteamForms
         public Form LocalParentForm { get; set; }
         public bool IsClosingThisForm { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
+        private List<object> _tempObjForPanting = new List<object>();
         public UsersGameForm()
         {
             InitializeComponent();
         }
 
-        private List<object> _tempObjForPanting = new List<object>();
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

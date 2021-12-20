@@ -1,6 +1,7 @@
 ﻿using Steam_v2.Enums;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace App.Model
 {
@@ -21,7 +22,10 @@ namespace App.Model
         public bool IsAuthorized { get; set; }
         public string Fio { get; set; }
 
+
         public List<Game> Games = new List<Game>();
+
+        //public List<Game> Games2 = new List<Game>();
 
         public Basket Basket = new Basket();
 
@@ -67,18 +71,25 @@ namespace App.Model
             }
         }
 
-
-        public string[] GamesNames
+        public  bool IsGameInAccount(string name)
         {
-            get
-            {
-                string[] tempSting = new string[Games.Count];
+            // по интуиции 
+          return  GamesNames().Exists (x=>x==name) ;                   
+        }
 
-                for (int i = 0; i < Games.Count; i++)
+
+        public List<string> GamesNames()
+        {
+            
+            {
+                List<string> listGameNames =new List<string>();
+
+                foreach (Game game in Games)
                 {
-                    tempSting[i] = Games[i].Name;
+                    listGameNames.Add(game.Name);
                 }
-                return tempSting;
+
+                return listGameNames;
             }
         }
 

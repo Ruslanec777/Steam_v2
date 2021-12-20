@@ -30,7 +30,6 @@ namespace SteamForms
         private void InitializeComponent()
         {
             this.GamePictureBox = new System.Windows.Forms.PictureBox();
-            this.RefuseBuyBtn = new System.Windows.Forms.Button();
             this.GameAddBasketBtn = new System.Windows.Forms.Button();
             this.GameNamelabel = new System.Windows.Forms.Label();
             this.Pricelabel = new System.Windows.Forms.Label();
@@ -44,17 +43,6 @@ namespace SteamForms
             this.GamePictureBox.Size = new System.Drawing.Size(455, 279);
             this.GamePictureBox.TabIndex = 0;
             this.GamePictureBox.TabStop = false;
-            // 
-            // RefuseBuyBtn
-            // 
-            this.RefuseBuyBtn.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RefuseBuyBtn.Location = new System.Drawing.Point(25, 559);
-            this.RefuseBuyBtn.Name = "RefuseBuyBtn";
-            this.RefuseBuyBtn.Size = new System.Drawing.Size(455, 43);
-            this.RefuseBuyBtn.TabIndex = 9;
-            this.RefuseBuyBtn.Text = "Отказаться от покупки";
-            this.RefuseBuyBtn.UseVisualStyleBackColor = true;
-            this.RefuseBuyBtn.Click += new System.EventHandler(this.RefuseBuyBtn_Click);
             // 
             // GameAddBasketBtn
             // 
@@ -96,7 +84,6 @@ namespace SteamForms
             this.Controls.Add(this.Pricelabel);
             this.Controls.Add(this.GameNamelabel);
             this.Controls.Add(this.GameAddBasketBtn);
-            this.Controls.Add(this.RefuseBuyBtn);
             this.Controls.Add(this.GamePictureBox);
             this.Name = "BuyingGame";
             this.Text = "BuyingGame";
@@ -109,7 +96,6 @@ namespace SteamForms
         #endregion
 
         private System.Windows.Forms.PictureBox GamePictureBox;
-        private System.Windows.Forms.Button RefuseBuyBtn;
         private System.Windows.Forms.Button GameAddBasketBtn;
         private System.Windows.Forms.Label GameNamelabel;
         private System.Windows.Forms.Label Pricelabel;

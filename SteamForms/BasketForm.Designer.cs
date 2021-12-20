@@ -30,7 +30,6 @@ namespace SteamForms
         private void InitializeComponent()
         {
             this.BasketActionLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.ByGamesBtn = new System.Windows.Forms.Button();
             this.balanceLbl = new System.Windows.Forms.Label();
             this.deleteChosenBtn = new System.Windows.Forms.Button();
@@ -45,23 +44,12 @@ namespace SteamForms
             // 
             this.BasketActionLbl.AutoSize = true;
             this.BasketActionLbl.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BasketActionLbl.Location = new System.Drawing.Point(96, 9);
+            this.BasketActionLbl.Location = new System.Drawing.Point(21, 9);
             this.BasketActionLbl.Name = "BasketActionLbl";
-            this.BasketActionLbl.Size = new System.Drawing.Size(257, 46);
+            this.BasketActionLbl.Size = new System.Drawing.Size(410, 46);
             this.BasketActionLbl.TabIndex = 0;
-            this.BasketActionLbl.Text = "Корзина пуста";
+            this.BasketActionLbl.Text = "Стоимость выбранных ";
             this.BasketActionLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(370, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 46);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Корзина";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ByGamesBtn
             // 
@@ -106,7 +94,7 @@ namespace SteamForms
             this.checkedListBox.Name = "checkedListBox";
             this.checkedListBox.Size = new System.Drawing.Size(522, 308);
             this.checkedListBox.TabIndex = 5;
-            this.checkedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -156,11 +144,9 @@ namespace SteamForms
             this.Controls.Add(this.deleteChosenBtn);
             this.Controls.Add(this.balanceLbl);
             this.Controls.Add(this.ByGamesBtn);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.BasketActionLbl);
             this.Name = "BasketForm";
             this.Text = "Basket";
-            this.Load += new System.EventHandler(this.BasketForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +155,6 @@ namespace SteamForms
         #endregion
 
         private System.Windows.Forms.Label BasketActionLbl;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ByGamesBtn;
         private System.Windows.Forms.Label balanceLbl;
         private System.Windows.Forms.Button deleteChosenBtn;

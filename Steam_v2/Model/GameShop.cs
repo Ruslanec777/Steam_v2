@@ -62,7 +62,7 @@ namespace App.Model
 
         public static Game GetGameByName(string name)
         {
-            return GamesList.Where(x => x.Name == name).FirstOrDefault();                    
+            return GamesList.FirstOrDefault(x => x.Name == name);
         }
     }
 }

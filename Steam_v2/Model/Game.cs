@@ -46,7 +46,7 @@ namespace App.Model
 
         public bool ByTheGame(Account account)
         {
-            if (account != null && account.Balance > Price)
+            if (account != null && account.Balance >= Price)
             {
                 account.Balance -= Price;
                 // account.AddGame(this);//
